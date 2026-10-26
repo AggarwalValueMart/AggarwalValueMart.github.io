@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AGGARWAL VALUE MART</title>
+<meta name="description" content="Festive gift packs – sweets, namkeens, chocolates, cookies, dry fruits, perfumes and juices. Order on WhatsApp.">
+<meta name="theme-color" content="#6E1A50">
+<meta property="og:type" content="website"><meta property="og:url" content="https://aggarwalvaluemart.github.io/">
+<meta property="og:title" content="AGGARWAL VALUE MART"><meta property="og:description" content="Festive gift packs – sweets, namkeens, chocolates, cookies, dry fruits, perfumes and juices. Order on WhatsApp.">
+<meta property="og:image" content="https://aggarwalvaluemart.github.io/icon-512.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Aggarwal Mart">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__a2hs=e});
+if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});</script>
+</head><body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap">
+<style id="app-style">
+/* Layout: festive quick-shop. Berry header with marigold toran and search, Diwali banner, 3-step order guide, Top selling carousel, Shop-by-category tiles, product grid, detail + share sheets, berry cart bar. One committed light festive look. */
+:root{
+  --bg:#FFF3EA; --surface:#FFFFFF; --ink:#2A1622; --muted:#7A6570; --line:#F1DCD2; --soft:#FCEBE3;
+  --berry:#8C2366; --berry-deep:#6E1A50; --berry-soft:#FBEEF5; --rose:#C2185B;
+  --saffron:#F2A33A; --marigold:#FF8A1F; --offer:#E8731A; --save:#178A3A; --danger:#D23B2E; --tile:#FFF5EC; --wa:#1FA855;
+  --hand:"Kalam","Comic Sans MS",cursive;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background-color:var(--bg);background-image:radial-gradient(900px 420px at 50% 0,rgba(255,170,60,.18),transparent 70%),var(--pattern,none);background-size:auto,140px 140px;color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.4;min-height:100vh}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--berry-deep)}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--berry);outline-offset:2px}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1200px;margin:0 auto}
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:linear-gradient(100deg,var(--berry-deep),#A3174E 60%,var(--rose));color:#fff;padding-block:12px;box-shadow:0 2px 12px rgba(123,30,90,.25)}
+.hdr .inner{display:grid;grid-template-columns:auto 1fr auto;gap:10px 12px;align-items:center}
+.logo{width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:800;font-size:19px;color:var(--offer);box-shadow:0 0 0 3px rgba(255,255,255,.3);overflow:hidden;flex:none}
+.logo img{width:84%;height:84%;object-fit:contain}
+.brand{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;margin:0 0 18px}
+.brand .bl{width:104px;height:104px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 4px #FFE3C4,0 0 0 6px var(--saffron),0 10px 26px rgba(232,115,26,.28);overflow:hidden}
+.brand .bl img{width:80%;height:80%;object-fit:contain}
+.brand .bl b{font-size:40px;color:var(--offer)}
+.brand h2{margin:6px 0 0;font-size:clamp(26px,7vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.01em;color:var(--berry-deep);text-wrap:balance}
+.brand p{margin:0;color:var(--muted);font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:6px}
+.brand p i{width:8px;height:8px;border-radius:50%;background:var(--save);display:inline-block}
+.brand .orn{display:flex;align-items:center;gap:8px;color:var(--offer);font-family:var(--hand);font-size:15px}
+.brand .orn svg{width:70px;height:20px}
+.shop{min-width:0}
+.shop .eta{opacity:.92;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
+.shop .eta i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--saffron);box-shadow:0 0 8px var(--saffron);flex:none}
+.shop h1{margin:1px 0 0;font-size:20px;font-weight:800;line-height:1.15;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.hbtns{display:flex;gap:6px}
+.hbtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);border-radius:10px;padding:7px 10px;font-weight:700;font-size:12.5px;color:#fff;display:inline-flex;align-items:center;gap:6px}
+.hbtn svg{width:16px;height:16px}
+.hbtn.on{background:#fff;color:var(--berry-deep);border-color:#fff}
+.hbtns.own #shareShop span,.hbtns.own #a2hs span{display:none}
+.hbtns.own{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.hbtns.own #toggleManage{grid-column:1/-1;justify-content:center}
+.hbtns.own .hbtn{justify-content:center}
+.hbtns:not(.own){flex-direction:column;align-items:stretch;gap:5px}
+.hbtns:not(.own) .hbtn{padding:5px 10px;font-size:12px}
+.search{grid-column:1/-1;position:relative}
+.search input{width:100%;border:0;border-radius:12px;background:#fff;color:#1C1C1C;padding:12px 14px 12px 40px;font-size:15px}
+.search input::placeholder{color:#8A8F99}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#5A5F69}
+.toran{position:absolute;left:0;right:0;top:100%;height:46px;pointer-events:none;overflow:hidden}
+.toran svg{display:block;width:100%;height:100%}
+.page{padding-block:44px 120px}
+
+/* banner */
+.banner{border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(110deg,var(--rose) 0%,#D9433A 50%,#F08A24 100%);color:#fff;padding:20px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(194,24,91,.22)}
+.banner .lights{position:absolute;left:0;right:0;top:0;height:10px;background:radial-gradient(circle,#FFD54A 0 3px,transparent 3.5px) 0 2px/22px 10px repeat-x}
+@media (prefers-reduced-motion:no-preference){.banner .lights{animation:twinkle 1.4s steps(2) infinite}}
+@keyframes twinkle{50%{opacity:.45}}
+.banner small{font-family:var(--hand);font-size:16px;opacity:.95}
+.banner h2{margin:2px 0 0;font-size:24px;font-weight:800;line-height:1.1;text-wrap:balance}
+.banner p{margin:6px 0 0;font-size:13px;opacity:.92;max-width:44ch;white-space:pre-line}
+.banner .cta{margin-top:12px;display:inline-block;border:0;background:#fff;color:#A3174E;font-weight:800;font-size:13px;border-radius:10px;padding:8px 12px}
+.banner canvas{width:118px;height:118px;max-width:100%}
+
+/* how to order */
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.how div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 8px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;line-height:1.25;min-width:0}
+.how b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--berry-soft);color:var(--berry);display:grid;place-items:center;font-size:12px}
+
+/* section titles */
+.sec-t{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:24px 0 12px}
+.sec-t h3{margin:0;font-size:19px;font-weight:800;display:flex;align-items:center;gap:8px}
+.sec-t h3 svg{width:22px;height:22px;flex:none}
+.sec-t span,.sec-t button.link{color:var(--berry);font-size:13px;font-weight:700;background:none;border:0;padding:0}
+.notice{background:#FFF7DB;color:#5A4500;border:1px solid #F3DE94;border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13px}
+
+/* top selling */
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 10px;margin:0 -2px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail .card{flex:none;width:168px;scroll-snap-align:start}
+.top-wrap{background:linear-gradient(180deg,#FFE3C4,#FFF0E2);border:1px solid #F7D2AE;border-radius:18px;padding:4px 12px 6px;margin-top:20px}
+.top-wrap .sec-t{margin:12px 0 10px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (min-width:700px){.cats{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.cat{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:10px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:800;font-size:13px;color:var(--ink);min-width:0}
+.cat .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center}
+.cat .ico svg{width:40px;height:40px}
+.cat .ico.ph{width:100%;height:auto;aspect-ratio:1/1;max-width:120px;overflow:hidden;border-radius:14px;box-shadow:0 2px 8px rgba(160,60,40,.12)}
+.cat .ico.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.cat small{font-weight:600;color:var(--muted);font-size:11px;margin-top:-4px}
+.cat.on{border-color:var(--berry);box-shadow:0 0 0 2px var(--berry) inset;background:var(--berry-soft)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-block:2px 12px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;color:var(--ink)}
+.cat small.soon{color:#fff;background:var(--offer);border-radius:999px;padding:2px 8px;margin-top:-2px}
+.soonbox{grid-column:1/-1;text-align:center;background:var(--surface);border:2px dashed #F2A33A;border-radius:16px;padding:28px 18px}
+.soonbox b{display:block;font-size:20px;color:var(--berry-deep)}
+.soonbox p{margin:8px auto 0;color:var(--muted);max-width:40ch}
+.a2hs{display:flex;align-items:center;gap:12px;width:100%;margin-top:12px;border:1.5px dashed var(--berry);background:var(--berry-soft);border-radius:14px;padding:10px 14px;text-align:left;color:var(--ink)}
+.a2hs .a2i{width:38px;height:38px;border-radius:10px;background:var(--berry);color:#fff;display:grid;place-items:center;flex:none}
+.a2hs .a2i svg{width:20px;height:20px}
+.a2hs b{display:block;font-size:14px;color:var(--berry-deep)}
+.a2hs small{display:block;color:var(--muted);font-size:12px}
+.a2hs .go{margin-left:auto;font-size:22px;color:var(--berry);font-weight:800}
+.hs{margin-top:10px}.hs h4{margin:0 0 4px;font-size:14px;color:var(--berry-deep)}
+.hs ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px}
+.shr{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 5px}
+.chip.on{background:var(--berry);border-color:var(--berry);color:#fff}
+.frow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+.sortl{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--muted)}
+.sortl select{width:auto;padding:8px 32px 8px 12px;font-size:13px;font-weight:700;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink);appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--berry) 50%),linear-gradient(135deg,var(--berry) 50%,transparent 50%);background-position:calc(100% - 16px) 52%,calc(100% - 11px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.clr{border:0;background:none;color:var(--berry);font-weight:800;font-size:13px;padding:6px 2px;text-decoration:underline}
+.bchips{display:flex;gap:6px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;align-items:center}
+.bchips::-webkit-scrollbar{display:none}
+.bchips .bl{flex:none;font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-right:2px}
+.bchip{flex:none;border:1px dashed var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-weight:700;font-size:12.5px;color:var(--ink)}
+.bchip small{color:var(--muted);font-weight:700;margin-left:2px}
+.bchip.on{border-style:solid;border-color:var(--offer);background:#FFF1E3;color:#9A4A0B}
+.bchip.on small{color:#9A4A0B}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:820px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}}
+@media (min-width:1080px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.card{background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 10px rgba(160,60,40,.07);border-radius:16px;padding:8px;display:flex;flex-direction:column;min-width:0;position:relative}
+.open{border:0;background:none;padding:0;text-align:left;display:block;width:100%;color:inherit}
+.pic{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:12px;overflow:hidden;background:var(--tile)}
+.pic img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.off{position:absolute;top:0;left:8px;background:var(--offer);color:#fff;font-size:10px;font-weight:800;line-height:1.1;text-align:center;padding:5px 5px 7px;clip-path:polygon(0 0,100% 0,100% 100%,50% 86%,0 100%);min-width:34px}
+.best{position:absolute;left:0;bottom:8px;background:linear-gradient(90deg,var(--berry),var(--rose));color:#fff;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px 3px 7px;border-radius:0 999px 999px 0}
+.stamp{position:absolute;right:6px;bottom:8px;background:rgba(255,255,255,.9);color:var(--muted);font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:2px 6px}
+.share-ic{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--berry);display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.12);z-index:1}
+.share-ic svg{width:16px;height:16px}
+.soldout{position:absolute;inset:0;background:rgba(255,255,255,.62);display:grid;place-items:center;font-weight:800;color:#2A1622;font-size:13px}
+.art{position:absolute;inset:0;display:grid;place-items:center}
+.art svg{width:62%;height:62%}
+.meta{padding:8px 2px 0;display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.name{font-weight:700;font-size:13.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+.size{color:var(--muted);font-size:12px;font-weight:500}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:6px;margin-top:auto;padding-top:8px}
+.price b{display:block;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.price b.ask{font-size:13px;color:var(--offer)}
+.price s{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.add{border:1.5px solid var(--berry);background:var(--berry-soft);color:var(--berry);font-weight:800;font-size:13px;border-radius:10px;padding:7px 14px;min-width:70px}
+.step{display:inline-flex;align-items:center;background:var(--berry);color:#fff;border-radius:10px;overflow:hidden;min-width:70px;justify-content:space-between}
+.step button{border:0;background:transparent;color:inherit;width:26px;height:34px;font-size:17px;font-weight:800}
+.step span{font-weight:800;font-size:13px;min-width:14px;text-align:center;font-variant-numeric:tabular-nums}
+.owner-row{display:flex;gap:6px;padding-top:8px}
+.owner-row button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 4px;font-weight:700;font-size:12px}
+.owner-row .del{color:var(--danger);border-color:var(--danger)}
+.addcard{border:2px dashed var(--line);border-radius:16px;background:rgba(255,255,255,.5);min-height:220px;font-weight:800;color:var(--berry)}
+.empty{text-align:center;color:var(--muted);padding:40px 16px;grid-column:1/-1}
+.flourish{display:flex;align-items:center;justify-content:center;gap:10px;margin:30px 0 0;color:var(--muted);font-family:var(--hand);font-size:17px;text-align:center}
+.flourish svg{width:120px;height:28px;flex:none;max-width:28%}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .18s,box-shadow .18s}.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(160,60,40,.12)}}
+
+/* cart bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-top:8px;pointer-events:none}
+.bar-in{pointer-events:auto;max-width:560px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(100deg,var(--berry),var(--rose));color:#fff;border:0;width:100%;border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px rgba(140,35,102,.35);text-align:left}
+.bar-in .l{display:flex;align-items:center;gap:10px;min-width:0}
+.bar-in .ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.bar-in .ic svg{width:20px;height:20px}
+.bar-in small{display:block;font-size:12px;font-weight:600;opacity:.9}
+.bar-in b{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums}
+.bar-in .go{font-weight:800;font-size:15px;white-space:nowrap}
+.bar-in.owner{background:var(--offer);box-shadow:0 8px 24px rgba(232,115,26,.35)}
+.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.bump{animation:none}}
+
+/* sheets */
+.scrim{position:fixed;inset:0;background:rgba(30,6,20,.55);z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:520px;max-height:94vh;overflow:auto;border-radius:20px 20px 0 0;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+@media (min-width:640px){.scrim{align-items:center}.sheet{border-radius:20px}}
+.sh-head{position:sticky;top:0;background:var(--surface);display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px max(16px,env(safe-area-inset-left,0px)) 14px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);z-index:2}
+.sh-head h2{margin:0;font-size:17px;font-weight:800}
+.x{border:0;background:var(--soft);border-radius:999px;width:34px;height:34px;font-size:18px;flex:none}
+.blk{background:var(--surface);border-radius:14px;margin:12px max(12px,env(safe-area-inset-left,0px)) 0 max(12px,env(safe-area-inset-left,0px));padding:12px 14px}
+.blk h4{margin:0 0 8px;font-size:15px;font-weight:800}
+.dpic{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:14px;overflow:hidden;background:var(--tile)}
+.dpic>img{width:100%;height:100%;object-fit:contain;background:#fff}
+.dpic img[data-zoom]{cursor:zoom-in}
+.zbtn{position:absolute;right:8px;top:8px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--berry);display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.15);z-index:2}
+.zbtn svg{width:18px;height:18px}
+.zoomer{position:fixed;inset:0;z-index:50;background:#140910;display:flex;flex-direction:column}
+.zscroll{flex:1;overflow:auto;display:grid;place-items:center;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
+.zscroll img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;display:block}
+.zoomer.big .zscroll{display:block}
+.zoomer.big .zscroll img{max-width:none;max-height:none;width:260%;cursor:zoom-out}
+@media (min-width:700px){.zoomer.big .zscroll img{width:180%}}
+.ztop{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(12px,env(safe-area-inset-left,0px));color:#fff;font-weight:700;background:linear-gradient(rgba(0,0,0,.55),transparent)}
+.ztop .zr{display:flex;gap:8px}
+.zb{border:0;background:rgba(255,255,255,.92);color:#2A1622;border-radius:999px;min-width:40px;height:40px;padding:0 14px;font-weight:800;font-size:14px}
+.zoomer .gnav{z-index:2}
+.zhint{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));margin:0;text-align:center;color:rgba(255,255,255,.8);font-size:12px;font-weight:600;pointer-events:none}
+.gal{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:none;width:100%;height:100%;object-fit:contain;background:#fff;scroll-snap-align:center}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(42,22,34,.25);transition:width .2s}
+.dots i.on{width:18px;border-radius:4px;background:var(--berry)}
+.gnav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:0 2px 6px rgba(0,0,0,.15);font-size:20px;font-weight:800;color:var(--berry);display:grid;place-items:center}
+.gnav.l{left:8px}.gnav.r{right:8px}
+.more{position:absolute;right:6px;top:44px;background:rgba(42,22,34,.7);color:#fff;font-size:10px;font-weight:800;border-radius:6px;padding:2px 6px}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.slot{display:grid;gap:6px;justify-items:center;min-width:0}
+.slot .thumb{max-width:none}
+.slot .lbl{font-size:12px;font-weight:700;color:var(--muted)}
+.slot .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.slot .acts .btn{padding:7px 10px;font-size:12px}
+.dname{font-size:20px;font-weight:800;margin:12px 0 2px;line-height:1.2}
+.dsize{color:var(--muted);font-weight:600}
+.dprice{display:flex;align-items:baseline;gap:8px;margin-top:8px;flex-wrap:wrap}
+.dprice b{font-size:22px;font-weight:800}
+.dprice s{color:var(--muted)}
+.dprice em{font-style:normal;background:#E9F7EC;color:var(--save);font-weight:800;font-size:12px;border-radius:6px;padding:2px 6px}
+.ddesc{margin:10px 0 0;color:var(--ink);font-size:14px;line-height:1.5}
+.drow{display:flex;gap:10px;margin-top:14px;align-items:center}
+.drow .btn{flex:1}
+.drow .step{min-width:120px;height:46px}
+.drow .step button{width:40px;height:46px;font-size:20px}
+.ci{display:grid;grid-template-columns:46px 1fr auto;gap:10px;align-items:center;padding:8px 0}
+.ci+.ci{border-top:1px solid var(--line)}
+.ci .th{width:46px;height:46px;border-radius:8px;overflow:hidden;position:relative;background:var(--tile)}
+.ci .th>img{width:100%;height:100%;object-fit:cover}
+.ci .n{font-weight:700;font-size:13px;min-width:0}
+.ci .n small{display:block;color:var(--muted);font-weight:500}
+.ci .r{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.ci .r b{font-size:13px;font-variant-numeric:tabular-nums}
+.bill{display:grid;gap:6px;font-size:13px}
+.bill div{display:flex;justify-content:space-between;gap:10px;font-variant-numeric:tabular-nums}
+.bill .save{color:var(--save);font-weight:700}
+.bill .gt{font-weight:800;font-size:15px;border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+.savebanner{background:#E9F7EC;color:var(--save);font-weight:800;font-size:13px;border-radius:10px;padding:8px 12px;margin:12px max(12px,env(safe-area-inset-left,0px)) 0}
+.fields{display:grid;gap:10px}
+label{display:grid;gap:4px;font-size:12px;font-weight:700;color:var(--muted)}
+input,textarea,select{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:11px 12px;font-size:15px;width:100%;min-width:0;color:var(--ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--berry);outline:none}
+textarea{resize:vertical;min-height:64px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check{display:flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;font-size:14px}
+.check input{width:auto;accent-color:var(--berry)}
+.cta-row{padding:14px max(12px,env(safe-area-inset-left,0px)) 0;display:grid;gap:8px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:13px 14px;font-weight:800;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:var(--ink)}
+.btn svg{width:18px;height:18px}
+.btn.berry{background:var(--berry);border-color:var(--berry);color:#fff}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#fff}
+.btn.split{justify-content:space-between}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.hint{font-size:12px;color:var(--muted);margin:0;text-align:center}
+.err{color:var(--danger);font-size:13px;margin:6px 0 0}
+.sharecard{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center}
+.sharecard .th{width:64px;height:64px;border-radius:10px;overflow:hidden;position:relative;background:var(--tile)}
+.sharecard .th>img{width:100%;height:100%;object-fit:cover}
+.linkbox{font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 10px;word-break:break-all;user-select:all;color:var(--muted)}
+.thumb{width:100%;aspect-ratio:1/1;max-width:200px;margin:0 auto;border-radius:12px;overflow:hidden;position:relative;background:var(--tile)}
+.thumb>img{width:100%;height:100%;object-fit:contain;background:#fff}
+.photo-row{display:flex;gap:8px;justify-content:center;margin:10px 0 4px}
+.photo-row .btn{padding:8px 12px;font-size:13px}
+.filebtn{position:relative;overflow:hidden;cursor:pointer}
+.filebtn input[type=file]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:100px;padding:0;border:0}
+.filebtn:focus-within{outline:2px solid var(--berry);outline-offset:2px}
+.msgbox{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12px;user-select:all}
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--berry-deep);color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:700;z-index:30;max-width:calc(100% - 32px)}
+
+/* ---- polish v2 ---- */
+#petals{z-index:0;opacity:.75}
+main.page,.hdr{position:relative;z-index:1}
+.hdr{z-index:6}
+.brand{flex-direction:row;justify-content:center;gap:14px;margin:0 0 16px;text-align:left}
+.brand .bl{width:72px;height:72px;flex:none}
+.brand .bl b{font-size:30px}
+.brand h2{font-size:clamp(22px,6.4vw,32px);margin:0}
+.brand .orn{display:none}
+.brand p.fg{font-family:var(--hand);color:var(--offer);font-size:16px;font-weight:400}
+.brand>div:not(.bl){display:flex;flex-direction:column;gap:4px}
+.banner{box-shadow:0 14px 34px rgba(194,24,91,.28)}
+.sec-t h3{font-size:20px;letter-spacing:-.01em;position:relative;padding-bottom:6px}
+.sec-t h3::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--saffron),var(--rose))}
+.cats{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 10px}
+@media (min-width:700px){.cats{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.cat{border:0;background:none;padding:0;gap:6px;font-size:12.5px;box-shadow:none}
+.cat .ico,.cat .ico.ph{width:100%;height:auto;aspect-ratio:1/1;max-width:none;border-radius:18px;box-shadow:0 6px 16px rgba(140,35,102,.16);border:2px solid #fff;overflow:hidden}
+.cat .ico svg{width:58%;height:58%}
+.cat .ico{display:grid;place-items:center}
+.cat small{font-size:10.5px}
+.cat small.soon{font-size:9.5px;padding:1px 6px}
+.cat.on{background:none;box-shadow:none}
+.cat.on .ico{border-color:var(--berry);box-shadow:0 0 0 2px var(--berry),0 6px 16px rgba(140,35,102,.25)}
+.brandrow{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:none}
+.brandrow::-webkit-scrollbar{display:none}
+.bcard{flex:none;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px 6px 6px;font-weight:800;font-size:13px;color:var(--ink);box-shadow:0 2px 8px rgba(160,60,40,.08)}
+.bcard i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800}
+.bcard small{color:var(--muted);font-weight:700;font-size:11px}
+.card{border:0;box-shadow:0 4px 18px rgba(140,35,102,.10);border-radius:18px}
+.card .pic{border-radius:14px;background:linear-gradient(160deg,#FFF6EE,#FDEBF2)}
+.card .name{font-size:13.5px;font-weight:700}
+.price b{font-size:16.5px;color:var(--berry-deep)}
+.add{background:linear-gradient(135deg,var(--berry),var(--rose));color:#fff;border:0;box-shadow:0 4px 12px rgba(194,24,91,.28);border-radius:12px;padding:8px 16px;letter-spacing:.03em}
+.step{border-radius:12px;background:linear-gradient(135deg,var(--berry),var(--rose));box-shadow:0 4px 12px rgba(194,24,91,.28)}
+.rail .card{width:176px}
+.top-wrap{background:linear-gradient(180deg,#FFE0BF,#FFF2E4);border:0;box-shadow:inset 0 0 0 1px #F7D2AE}
+.how div{border:0;box-shadow:0 3px 12px rgba(160,60,40,.08)}
+.perkg{font-size:.72em;font-weight:700;color:var(--muted)}
+.wbox{margin-top:14px;background:var(--berry-soft);border-radius:14px;padding:12px}
+.wlab{font-weight:800;font-size:14px;color:var(--berry-deep);margin-bottom:8px}
+.wopts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wopt{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px 4px;font-weight:800;font-size:13px;color:var(--ink)}
+.wopt.on{border-color:var(--berry);background:var(--berry);color:#fff}
+.wcust{margin-top:10px;display:grid;gap:4px;font-size:12px}
+.wcust input{background:#fff}
+.wsum{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap}
+.wsum span{font-size:14px}.wsum b{font-size:18px;color:var(--berry-deep)}
+.wsum .btn{flex:1;min-width:150px}
+.win{margin-top:8px;font-size:12.5px;color:var(--save);font-weight:700}
+.dfnp{background:linear-gradient(150deg,#FFF1DE,#F7DCC0);display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px;text-align:center}.dfnp b{font-size:15px;font-weight:800;color:#7A3E12;line-height:1.2}.dfnp small{font-size:10.5px;font-weight:700;color:#A0663A;text-transform:uppercase;letter-spacing:.06em}
+.bcard.lg{flex-direction:column;gap:5px;padding:6px;border-radius:16px;width:124px}.bcard.lg img{width:112px;height:60px;object-fit:contain;border-radius:11px;display:block;background:#fff}.bcard.lg small{line-height:1}
+</style>
+<div id="app"><p class="empty">Loading…</p></div>
+<script type="application/json" id="store-data">{"store":{"name":"AGGARWAL VALUE MART","tagline":"Gift packs from your favourite brands -\n ....\nShop your favourites now!!!!!","whatsapp":"9958030605","delivery":"Same-day delivery","url":"https://aggarwalvaluemart.github.io/","logo":"images/da3c5bd153d3c913c8779a76b4bb8e7a.webp","catImg":{"Chocolates":"images/1e31aa94d41e12c276f28e0fa6a15a41.webp","Sweets":"images/536adc2035efb68c49ae3ad0fa8372e6.webp","Cookies":"images/741902c70464dd01259adc7eb230cb8d.webp","Perfumes":"images/0e79fb8a3bb7facbbee58ca388e5e1d2.webp","Namkeens":"images/734d82c2856ec9ee39e95b1f62ebe034.webp","Juices":"images/ec2553ca6554fae2f9a3635c357c4d85.webp","Dry Fruits":"images/39cc6af25c29578c081ca1e9b0342c67.webp"},"soon":["Hampers"],"brandLogo":{"Haldiram’s":"images/52f4820fb3eb3d2a444432aded1bfa4d.webp","Bikano":"images/929b434e5a0e6573380f723c474c6c9c.webp","Sapphire":"images/e0670caad8cb28645f6f0e8e64f0205a.webp","Harish":"images/8d289dbb7a8cb85a2494ff23a21aac07.webp","Bellavita":"images/969553c4db015daae297f9033f583c96.webp","Cadbury":"images/20133a429c8b15f0f7711118735fffa6.webp","Engage":"images/1284161c18c94a1b650edeb45f501ad9.webp","Real":"images/3cf4beeb445dac704d35c304a30639d8.webp","MTR":"images/4d668bbd404deac18f9a7c39d0802af7.webp","Dark Fantasy":"images/6b9c783c4f980361d230144c2d20ce98.webp","Ferrero Rocher":"images/668477855f41b9c9b144c4af33eed946.webp","Monginis":"images/cb0b0dc6525d73179aca56ad9096db9a.webp","Yoga Bar":"images/5f289dabd00d82719da1c0dcf0733137.webp","Tauffa":"images/640e4f27cbf0501399ecf65297a41a53.webp","Bhikharam Chandmal":"images/76934ccbffd740d4db59f56fafdb7047.webp","Amul":"images/28e126274c48749e6bc3477b160788f9.webp","White Castle":"images/5a7518ba14e7e1a8a8154005f3b7766d.webp","Gowardhan":"images/7cd94fa5086aa675cd716c2d49c04e69.webp"}},"packs":[{"id":"p10","name":"Bellavita Gift Set for Men","size":"4 x 20 ml (80 ml)","price":454,"mrp":649,"category":"Perfumes","desc":"Four eau de parfums in a gift box: CEO Man, Oud Parfum, Klub Man and G.O.A.T Man. 20 ml each.","best":false,"inStock":true,"sample":false,"hue":265,"image":"images/58eeac0a999e730896b7f36a5bb2f093.webp","full":"images/b039a05df20b80ec9d562e3f73ccd653.webp","image2":"images/652e058062d646eb0c5c7b0ba6901ddc.webp","full2":"images/89cf3b1c2211f6f9d39ec44ff7b2febf.webp","brand":"Bellavita"},{"id":"pf1","name":"Engage Blue Gift Set for Men","size":"3 bottles","price":375,"mrp":750,"category":"Perfumes","desc":"Three eau de parfums in a gift box: Amber Hues, Indigo Skies and Alpha Oud.","inStock":true,"sample":false,"image":"images/a4432e413dfc690a50cbd956202cedc1.webp","best":false,"full":"images/e00c54e2a9bdaa56fad675c5cff969dc.webp","image2":"images/3667bdd876163f1feeeca7afdedbca70.webp","full2":"images/97af43c351b61d239e2076c6411e421b.webp","brand":"Engage"},{"id":"pf2","name":"Engage Gold Gift Set for Men-Women","size":"3 bottles","price":375,"mrp":750,"category":"Perfumes","desc":"Three eau de parfums in a gift box: Amber Hues, Verona and One Soul.","inStock":true,"sample":false,"image":"images/cf422469efc5d61f56881f0f147aa201.webp","best":false,"full":"images/662b7200b1a3ae022f20cf8c0d196347.webp","image2":"images/12f22e4bc35ad13f721aac33a26ed478.webp","full2":"images/19f159f94435b05f77bb9259f31eb34f.webp","brand":"Engage"},{"id":"pf3","name":"Engage Gift Set for Women","size":"3 bottles","price":375,"mrp":750,"category":"Perfumes","desc":"Three eau de parfums in a gift box: Verona, Fantasia and Yang.","inStock":true,"sample":false,"image":"images/93d98692c9742280480626ab6f41a9a7.webp","best":false,"full":"images/38a76ae84b96ba00ee1268b1b416b75a.webp","image2":"images/58474934e0ab9ff2640cbe2ffc376d2c.webp","full2":"images/46bd781452fd5aae720fda253a69bb55.webp","brand":"Engage"},{"id":"pf4","name":"Bellavita Gift Set for Women","size":"4 x 20 ml (80 ml)","price":454,"mrp":649,"category":"Perfumes","desc":"Four eau de parfums in a gift box: Rosé, Glam, Date and Senorita. 20 ml each.","inStock":true,"sample":false,"image":"images/7a0fe02d9e9e06badec73f7ea23bd51f.webp","best":false,"full":"images/d7f4fe8f2403566248613e4b642b6746.webp","image2":"images/ea413aba2b5d0d7be93402eb16d4636f.webp","full2":"images/eb778d1a3e117f0f444ff93fa4e07267.webp","brand":"Bellavita"},{"id":"pf5","name":"Bellavita Skai Aquatic","size":"100 ml","price":0,"mrp":0,"category":"Perfumes","desc":"Fresh aquatic eau de cologne in a gift box.","inStock":true,"sample":false,"image":"images/5828e801bae6ed8ccd87eaa37b1c1d74.webp","best":false,"full":"images/8c1637d25a0b5c89bc7dfd16ef2cce22.webp","image2":"images/929b1e6a51703deaccf978f327c2544e.webp","full2":"images/2506d587c7da76465fbf3ad4b97523fa.webp","brand":"Bellavita"},{"id":"pf6","name":"Bellavita Oud Gold","size":"100 ml","price":809,"mrp":899,"category":"Perfumes","desc":"Oud Gold from the Bellavita Luxury Collection.","inStock":true,"sample":false,"image":"images/2b4bf4dc027a13a2494e28be22d28cf6.webp","best":false,"full":"images/a0db6c405b05665959eff5ce5beced8c.webp","image2":"images/9447ccc84f9fca79b7f96a5c59473f0e.webp","full2":"images/a5c3e52f16eecc1d5b820c9b73e2dc9d.webp","brand":"Bellavita"},{"id":"pf7","name":"Bellavita White Oud","size":"100 ml","price":539,"mrp":599,"category":"Perfumes","desc":"White Oud eau de parfum in a gift box.","inStock":true,"sample":false,"image":"images/a4065e4039501e2eeb8978bfbdc3b4e1.webp","best":false,"full":"images/510166df0a2bbe5dfe36f0ee81c63a9e.webp","image2":"images/fad9adf05f12449c1216930fa44530be.webp","full2":"images/478d7c7052fea42dd9101c26dab2302b.webp","brand":"Bellavita"},{"id":"pf8","name":"Bellavita G.O.A.T. Man","size":"100 ml","price":539,"mrp":599,"category":"Perfumes","desc":"G.O.A.T. Man eau de parfum in a gift box.","inStock":true,"sample":false,"image":"images/f03797a0fed2a53ca9a8520235420197.webp","best":false,"full":"images/841d46acf15a60e78f28edb230f210a9.webp","image2":"images/d86337ad6cdcf706a24e5c4b12f6fb2a.webp","full2":"images/9b0d5e3210043ec57d5c46b9806240b8.webp","brand":"Bellavita"},{"id":"pf9","name":"Engage One Soul","size":"1 bottle","price":454,"mrp":649,"category":"Perfumes","desc":"One Soul eau de parfum for man and woman.","inStock":true,"sample":false,"image":"images/f459bc9d920f0af7e8d25ec0ce27c154.webp","best":false,"full":"images/79649f67090337c7a5368e0e25b9f511.webp","image2":"images/58faf8cb2a1052ed07cc381229f9c22e.webp","full2":"images/298babd669c30669f82f58a6da1a90d1.webp","brand":"Engage"},{"id":"pf10","name":"Engage Fantasia","size":"1 bottle","price":454,"mrp":649,"category":"Perfumes","desc":"Fantasia eau de parfum for women, a night fragrance.","inStock":true,"sample":false,"image":"images/0691cb98b767d4988a4ce04bf25203d4.webp","best":false,"image2":"images/fe10672784bb5f296b3039546299f0cb.webp","full":"images/2fc24c440baec4654b4d1ea86af04463.webp","brand":"Engage","full2":"images/fe10672784bb5f296b3039546299f0cb.webp"},{"id":"ck1","name":"Harish Shubh Kamnaaye Cookies","size":"1.2kg","price":274,"mrp":366,"category":"Cookies","desc":"Premium assorted cookies in a festive gift box – jeera, jam-centre and almond cookies.","inStock":true,"sample":false,"image":"images/6b07c836b541577cd5b2cc86ef35bcd4.webp","best":false,"image2":"images/1adef826c97735f807f1534bbeb16b6c.webp","full":"images/b9cdbf2cf9fb51dfbf68af8dd49e0588.webp","brand":"Harish","full2":"images/1adef826c97735f807f1534bbeb16b6c.webp"},{"id":"ck2","name":"Harish Festive Blessings Cookies","size":"800g","price":262,"mrp":350,"category":"Cookies","desc":"Premium assorted cookies – jeera and dry fruit cookies in a festive gift box.","inStock":true,"sample":false,"image":"images/2e522e35356e7ea77d574b716bd9b8e0.webp","best":false,"image2":"images/59edb692c97744b8598afb0b225e0153.webp","full":"images/1a5c2484548dbf86f737c0b0db02b7db.webp","brand":"Harish","full2":"images/59edb692c97744b8598afb0b225e0153.webp"},{"id":"ck3","name":"Haldiram’s Double Dhamaka","size":"530g","price":299,"mrp":599,"category":"Cookies","desc":"Sweets and cookies together in one festive gift box.","inStock":true,"sample":false,"image":"images/df02ff207d706f9cd2c0cb3e5b4de524.webp","best":false,"image2":"images/141f8df0bbfd8a328e5c9c3920d92ff7.webp","full":"images/313e9c249973d3e576cd91885e42c382.webp","brand":"Haldiram’s","full2":"images/141f8df0bbfd8a328e5c9c3920d92ff7.webp"},{"id":"ck4","name":"Monginis Imperia Assorted Cookies","size":"3 tins 450g","price":260,"mrp":325,"category":"Cookies","desc":"Rich premium assorted cookies, including choco chip, in a gift box of 3 tins.","inStock":true,"sample":false,"image":"images/740eec68f70c4a274203838db443542e.webp","best":false,"image2":"images/dbd87f61d9447e803cefe1ca1a38c8ad.webp","full":"images/d50a986018bcceb278c8bf46a603593c.webp","brand":"Monginis","full2":"images/dbd87f61d9447e803cefe1ca1a38c8ad.webp"},{"id":"ck5","name":"Monginis Ultimates Dry Fruit Cookies","size":"3 tins 600g","price":360,"mrp":450,"category":"Cookies","desc":"Premium dry fruit cookies: Almond, Cashew and Pistachio, in a gift box of 3 tins.","inStock":true,"sample":false,"image":"images/b303d71b16cd28346040631fa63eedc0.webp","best":false,"image2":"images/d675cb0d42892d9fe5b0bd1f7f581ad0.webp","full":"images/404b46f91802f717ba0a106eb282beda.webp","brand":"Monginis","full2":"images/d675cb0d42892d9fe5b0bd1f7f581ad0.webp"},{"id":"ck6","name":"Harish Golden Moment Assorted Cookies","size":"900g","price":336,"mrp":420,"category":"Cookies","desc":"Assorted premium cookies in a festive gift box: Coconut Crunch, Butter Badam, Chocochip, Fruity Jam and Jeera cookies.","inStock":true,"sample":false,"image":"images/a8fdd8a28bcab25e3c9af3263edb9f7e.webp","best":false,"image2":"images/3947c592f266c9785b932db6d0429c0c.webp","full":"images/64ddb10817f3cb80637309bb8a415c1b.webp","brand":"Harish","full2":"images/3947c592f266c9785b932db6d0429c0c.webp"},{"id":"sw1","name":"Bhikharam Chandmal Premium Soan Papdi","size":"800g","price":240,"mrp":480,"category":"Sweets","desc":"Traditional soan papdi with elaichi and almonds.","inStock":true,"sample":false,"image":"images/8f63c031dea29b4949173f17b1134893.webp","best":false,"full":"images/4ad60bf68844b5a89b686c6e7f7ec17f.webp","image2":"images/c8ccae252ad804effab308c9eddf9e4b.webp","full2":"images/42830f0a40c9a6f1a602ea7b189c8f4b.webp","brand":"Bhikharam Chandmal"},{"id":"sw2","name":"Haldiram’s Dry Fruit Besan Ladoo","size":"400g","price":175,"mrp":350,"category":"Sweets","desc":"Nutty-sweet besan ladoos bursting with dry fruits.","inStock":true,"sample":false,"image":"images/ff5ec6d6c953a8a025ade1c422cf1624.webp","best":false,"full":"images/17276fec6b67fe97dbb95aed2d94ebde.webp","image2":"images/f12ccd088cded92cff54f6d620852dd1.webp","full2":"images/37888c17c0cad181b9d52bfe73ab3028.webp","brand":"Haldiram’s"},{"id":"sw3","name":"Haldiram’s Dry Fruit Panjeeri Ladoo","size":"400g","price":175,"mrp":350,"category":"Sweets","desc":"Dry-fruit loaded panjeeri ladoos sprinkled with ginger powder.","inStock":true,"sample":false,"image":"images/8c7d1d7e88a0d48122f4d2c0dad84be6.webp","best":false,"full":"images/f513bc1c98c757774516578378f7fec6.webp","image2":"images/1b1b87f87eb2693ec78be54af869b99e.webp","full2":"images/83a6c02e8423413fa518444cd03a483f.webp","brand":"Haldiram’s"},{"id":"sw4","name":"Harish Double Delight Eggless Cakes","size":"500g","price":251,"mrp":335,"category":"Sweets","desc":"Eggless cake assortment: chocochip cake and fruit cake.","inStock":true,"sample":false,"image":"images/20f452dfb69daed2e3d59c6606cef284.webp","best":false,"full":"images/9baa105de705572a55140889bd8b76bf.webp","image2":"images/e1892defb2e668390771810346c719bd.webp","full2":"images/2f4f3bb9e86de6cea206a85c99e6a23f.webp","brand":"Harish"},{"id":"sw5","name":"Haldiram’s Patisa","size":"400g","price":140,"mrp":280,"category":"Sweets","desc":"Delectable patisa cubes garnished with almonds.","inStock":true,"sample":false,"image":"images/85b6445b8b211e9ee66da03c6058b214.webp","best":false,"full":"images/76e7cf8b35680ccd3880a89ca0f71c32.webp","image2":"images/e410b3fd100a9789cc3c4a8c30a5caca.webp","full2":"images/bc3a7386ffc6ce3f1f5c2506acbba167.webp","brand":"Haldiram’s"},{"id":"sw6","name":"Haldiram’s Kaju Katli","size":"800g","price":892,"mrp":1050,"category":"Sweets","desc":"Signature kaju katli with silver varq.","inStock":true,"sample":false,"image":"images/32965dbadca87df8426fe12f3e3b31b9.webp","best":false,"full":"images/ff19ce2b5bf905cfdada9f472dc37dde.webp","image2":"images/eb3da992e30e351d43bd673ccb7bb19c.webp","full2":"images/74c2134e129b004a4b85004097481de9.webp","brand":"Haldiram’s"},{"id":"sw7","name":"Haldiram’s Mazedaar Moments","size":"900g","price":315,"mrp":350,"category":"Sweets","desc":"Sweets and namkeen together: barfi, rasgulla and mixture in one festive box.","inStock":true,"sample":false,"image":"images/fe378c4ce3d4e64a0c171374087d4959.webp","best":false,"full":"images/a957e6bd0ac1f142b472d166cbdd5231.webp","image2":"images/df19b1a0cb45317d6f8585b875992f7f.webp","full2":"images/9ff6b9acaf7d52185af84f6146507691.webp","brand":"Haldiram’s"},{"id":"sw8","name":"Bikano Kaju Katli","size":"400 g","price":450,"mrp":900,"category":"Sweets","desc":"Delicious cashew katli with silver varq.","inStock":true,"sample":false,"image":"images/88dedf34353f7011566b28be32fb3075.webp","best":false,"full":"images/0327b9b90d9f6d1a7aa6316b50b1dfe7.webp","image2":"images/80ad8fe6a2966593953bdb8d70826e0a.webp","full2":"images/7c145d5fde30c9e7bc74e36598d00120.webp","brand":"Bikano"},{"id":"sw9","name":"Bikano Royal Rasgulla","size":"1 kg/16pc","price":187,"mrp":375,"category":"Sweets","desc":"Soft chhena (cottage cheese) balls dipped in sugar syrup.","inStock":true,"sample":false,"image":"images/9e9a54b51db1192526eb81344a86767b.webp","best":true,"full":"images/31ce6c8966c6bc0458c2361d64b58b2d.webp","image2":"images/4ec47f4f86e5632920773bc6eb8c0f1c.webp","full2":"images/6357934e9ae0b99a6a2546b14a6e542a.webp","brand":"Bikano"},{"id":"sw10","name":"Haldiram’s Manpasand Delight","size":"1kg 50 g","price":351,"mrp":390,"category":"Sweets","desc":"Sweets and namkeen gift box: soan papdi, gulab jamun, mixture and namkeen.","inStock":true,"sample":false,"image":"images/786de19cd99249805cc8b3ae40b4806c.webp","full":"images/f626297f801d20ddbe933eb0c78a516b.webp","brand":"Haldiram’s","best":true,"image2":"images/4bcd49a35c524f063241325758921cf2.webp","full2":"images/bfda907643d5d749b18f3159aa5eb880.webp"},{"id":"sw11","name":"Haldiram’s Meetha Teekha","size":"655g","price":315,"mrp":349,"category":"Sweets","desc":"Sweets and namkeen gift box: soan papdi, bhujia, coated peanuts and chips.","inStock":true,"sample":false,"image":"images/250a80e724ea78387b263b9d683d1c38.webp","full":"images/91ab6cf1c7bc210a6b5a8f82b4876a3b.webp","brand":"Haldiram’s","best":false,"image2":"images/691e557473180ccc7d03c38759ad0519.webp","full2":"images/d00e25ad4ad576335c3dc9051a5f2202.webp"},{"id":"sw12","name":"Haldiram’s Mazedaar Kissey","size":"602g","price":216,"mrp":240,"category":"Namkeens","desc":"Sweets and namkeen gift box: soan papdi, mixture and namkeen.","inStock":true,"sample":false,"image":"images/4fece5402b566ceda583807d699a3964.webp","full":"images/71267e238c9b834dd5580cd3164d0424.webp","brand":"Haldiram’s","best":false,"image2":"images/7125f9ac3479c3f42947ecb0bf481700.webp","full2":"images/505733443b157d89ad6bbfad8a22533e.webp"},{"id":"sw13","name":"Haldiram’s Meethe Meethe Pal","size":"1.5kg","price":405,"mrp":450,"category":"Sweets","desc":"Sweets gift box: rasgulla, gulab jamun and rasgulla minis.","inStock":true,"sample":false,"image":"images/7a1cc45433c3a86762e9f9e932a80956.webp","full":"images/e3758b6d97332fc1d3805cb698eb7f71.webp","brand":"Haldiram’s","best":false,"image2":"images/3c1458d6a284ec6b59f0e8634f728e02.webp","full2":"images/452309f1862c21355025a3a6e2f438fd.webp"},{"id":"sw14","name":"Haldiram’s Khatta Meetha Surprise","size":"1.4kg","price":576,"mrp":640,"category":"Namkeens","desc":"Sweets and namkeen gift box: dry fruit sweet, gulab jamun, mixture and bhujia.","inStock":true,"sample":false,"image":"images/861449b3efe431707fe60856e8058563.webp","full":"images/d0303ecc21124e4b48d2162addb51084.webp","brand":"Haldiram’s","best":false,"image2":"images/d50f3486a4056fbd8df752540adb72fa.webp","full2":"images/9383c35a2aba261dc8313415cc5642c9.webp"},{"id":"sw15","name":"Haldiram’s Double Mazza","size":"1.4kg","price":504,"mrp":560,"category":"Sweets","desc":"Sweets and namkeen gift box: soan papdi, rasgulla, mixture and bhujia.","inStock":true,"sample":false,"image":"images/509c16e8c950feca6e56efbd4f340df9.webp","full":"images/aae3bdab13ec4273c7b6d482659110a5.webp","brand":"Haldiram’s","best":false,"image2":"images/b9d32a8c601246a4276d6ef36ae0115c.webp","full2":"images/b34d723b14e9fde7cef47970a937ce35.webp"},{"id":"sw16","name":"Haldiram’s Chatpati Bhajeen","size":"800g","price":320,"mrp":355,"category":"Namkeens","desc":"Namkeen gift box with four assorted bhujia and mixtures.","inStock":true,"sample":false,"image":"images/2586247eda4396de458ca662430f166d.webp","full":"images/6dd97d11cb33d175524da39811ef64b5.webp","brand":"Haldiram’s","best":false,"image2":"images/d84d0d7a710cef449956902330d43451.webp","full2":"images/9d529fcba709f1d51ce4f4435a1525dd.webp"},{"id":"sw17","name":"Haldiram’s Triple Mazza","size":"660g","price":404,"mrp":449,"category":"Namkeens","desc":"Festive gift box of gajak, chikki, barfi and namkeen.","inStock":true,"sample":false,"image":"images/7dc9738c4828c37f3027104956f5d3d3.webp","full":"images/af4bb52259fdf116da3ae963005c6a1e.webp","brand":"Haldiram’s","best":false,"image2":"images/093e68552d3ec674e1b742a1c12c35b7.webp","full2":"images/c6deeebd9404bc7153e19478295ebe79.webp"},{"id":"sw18","name":"Haldiram’s Shahi Andaaz","size":"840g","price":783,"mrp":870,"category":"Sweets","desc":"Royal range of snacks with kaju barfi and three namkeens.","inStock":true,"sample":false,"image":"images/6a75156892bca389a0b0ca9cb3dbd73f.webp","full":"images/a399c6a2918e2817ab9acf46aea922ab.webp","brand":"Haldiram’s","best":false,"image2":"images/50c64e013082f965ec1daa28d6b1c392.webp","full2":"images/dd8769e912a5a16d1b4221b359ba3cc7.webp"},{"id":"sw19","name":"Harish Bakers Treat","size":"580g","price":236,"mrp":315,"category":"Sweets","desc":"Soan papdi, jam cookies and namkeen (hari pati, hari dal, Kashmiri saath).","inStock":true,"sample":false,"image":"images/dbb75c4f6a2aed2df3fd8242c9025787.webp","full":"images/ec28818dbdacbecdb709850a62d0f6e9.webp","brand":"Harish","best":false,"image2":"images/13a73a53ffa1a4b9cd98cb564d73b39b.webp","full2":"images/72614e52000f2cd07cc48f9928a1734b.webp"},{"id":"sw20","name":"Harish Trio Treat Eggless Cakes","size":"750g","price":356,"mrp":475,"category":"Sweets","desc":"3-in-1 eggless cakes: chocochip, dry fruit and fruit cake.","inStock":true,"sample":false,"image":"images/0e74c28a67bec36ce3c141575a7c5d35.webp","full":"images/19821098ed88e0c85295370f89b80a9c.webp","brand":"Harish","best":false,"image2":"images/9f3581fda5b461b1c9c55e16c1f1b0e0.webp","full2":"images/c56600bd9e99661833f47524d6e9b1f5.webp"},{"id":"sw21","name":"Bikano Anupam","size":"1kg","price":353,"mrp":415,"category":"Sweets","desc":"Sweets and namkeen gift box: barfi, rasgulla and two namkeens.","inStock":true,"sample":false,"image":"images/9fd5a54783aaaea6b77361d3d8f3e7b6.webp","full":"images/8e95b589198c428c50b42ed51ce33fe4.webp","brand":"Bikano","best":false},{"id":"sw22","name":"Bikano Anmol","size":"1.226kg","price":446,"mrp":525,"category":"Sweets","desc":"Premium gift box of rasgulla, barfi and three namkeens.","inStock":true,"sample":false,"image":"images/f0bafe9276ff93a5b03c42eefd808e77.webp","full":"images/8f024bfeb345ca76a8bccb20442deed3.webp","brand":"Bikano","best":false,"image2":"images/d4513834995a9c319ff5b3663785f3bb.webp","full2":"images/6b404fb3398dd061049cc77337022099.webp"},{"id":"sw23","name":"Bikano Mangalam","size":"911g","price":306,"mrp":360,"category":"Sweets","desc":"Gift box of makhana, rasgulla, ladoo and namkeen.","inStock":true,"sample":false,"image":"images/11044db609b345ccdf599218c1dd1c2a.webp","full":"images/8abf6bc7a3ad5ec09c92420e922e6f28.webp","brand":"Bikano","best":false,"image2":"images/bc01ae81f9e1c8d452cb623787683622.webp","full2":"images/8e5f7adee1c04e7402046cd99d3da49a.webp"},{"id":"sw24","name":"Bikano Shahi Nazrana","size":"1.6kg","price":510,"mrp":600,"category":"Sweets","desc":"Premium gift box of gulab jamun, rasgulla, matarpara and kaju mixture.","inStock":true,"sample":false,"image":"images/dca5d449f9003e0a6ae121c276fad709.webp","full":"images/fb6197068a71abb9550ae46837cc9705.webp","brand":"Bikano","best":false,"image2":"images/e56cb28fb280b274c12c3cab6d81e03f.webp","full2":"images/00d5ef89e0f5b2ff1be802ba613889b0.webp"},{"id":"sw25","name":"MTR Sweet Surprise","size":"1 kg","price":248,"mrp":285,"category":"Sweets","desc":"Kesar badam gulab jamun and gulab jamun. Total 1 kg.","inStock":true,"sample":false,"image":"images/1aecb8fa3c78af8862e2929304ab2840.webp","full":"images/bae64199343d32d890e235474faa043b.webp","brand":"MTR","best":false,"image2":"images/bdfbc1f99cc8eda2f87e95b14a64e615.webp","full2":"images/8ad0375035ce206b910466b5c52bcc81.webp"},{"id":"sw26","name":"Haldiram’s Soan Papdi (Desi Ghee)","size":"250g","price":113,"mrp":125,"category":"Sweets","desc":"Soan papdi made with desi ghee, garnished with almonds and pistachios.","inStock":true,"sample":false,"image":"images/fdae1250971e72e5f586f96d140e5812.webp","full":"images/2f701a9d0aa5759beaf3e9b021122b3e.webp","brand":"Haldiram’s","best":false,"image2":"images/07c66e45d8402b943af8a3502806265a.webp","full2":"images/0f629952a1a1631aac4f4f5c0f16f0e1.webp"},{"id":"sw27","name":"Haldiram’s Rasmalai Tikki","size":"1kg / 12pc","price":234,"mrp":260,"category":"Sweets","desc":"Juicy chhena soaked in rose flavoured sugar syrup.","inStock":true,"sample":false,"image":"images/d4601a6749dce0236b8ed2549d428054.webp","full":"images/90840e140c6bec10edc3a5b1b3dafa86.webp","brand":"Haldiram’s","best":false},{"id":"sw28","name":"Haldiram’s Rasgulla","size":"1kg / 16pc","price":207,"mrp":220,"category":"Sweets","desc":"Soft chhena with a classic rose-infused flavour.","inStock":true,"sample":false,"image":"images/5a419a73fb1898253f88914d2c05d23a.webp","full":"images/5e609d70851aa338cafe0972bafc6de4.webp","brand":"Haldiram’s","best":false,"image2":"images/69dbcfd8c4949afbdf996ebe14fed144.webp","full2":"images/e0c1aa5894941c679c7e720a7ef3a8e4.webp"},{"id":"sw29","name":"Haldiram’s Gulab Jamun","size":"1kg / 12","price":225,"mrp":250,"category":"Sweets","desc":"Soft and juicy khoa flavoured with cardamom.","inStock":true,"sample":false,"image":"images/a788cc2422b12031e3cb85200e910347.webp","full":"images/e2a49959c02aed1ac5721eef8c98474b.webp","brand":"Haldiram’s","best":false,"image2":"images/34e744c1de32a31ab38f1d2399bd262a.webp","full2":"images/77e630ba0c68f4794f716c2a01aaa6ed.webp"},{"id":"sw30","name":"Amul Kaju Katri","size":"200g","price":238,"mrp":250,"category":"Sweets","desc":"Cashew katli with silver varq.","inStock":true,"sample":false,"image":"images/f8bc9c0739d1053a760753c58f461a49.webp","full":"images/142821cd5a7c8d1dbe8906312f956538.webp","brand":"Amul","best":false,"image2":"images/306bd7c8079f4879a0f18f540077fd18.webp","full2":"images/653b082534b0445d5b44c6d8291bf336.webp"},{"id":"sw31","name":"Bikano Umang","size":"640g","price":208,"mrp":245,"category":"Sweets","desc":"Gift box of rasgulla, mixture and bhujia.","inStock":true,"sample":false,"image":"images/567f8575ab9981207764f8f18f425ff3.webp","full":"images/294e08b0563c1f3e0495f12fd8568d44.webp","brand":"Bikano","best":false,"image2":"images/9eee213f6f7bc69852b3389840d3acc7.webp","full2":"images/d558a2ba53fe0ec8f537e832846cbfb0.webp"},{"id":"sw32","name":"Bikano Milan","size":"520g","price":204,"mrp":240,"category":"Sweets","desc":"Gift box of ladoo, soan papdi and namkeen.","inStock":true,"sample":false,"image":"images/23b1b16f09ee6b8d16e8604264dc620e.webp","full":"images/9d9d1926cddfa2fd1a4e514cc11aee1e.webp","brand":"Bikano","best":false,"image2":"images/bec43dd4dd7b2a30b44f0cd8946cf019.webp","full2":"images/f19ab6fa0c46939db88ba747c5ab21a3.webp"},{"id":"sw33","name":"Bikano Premium Soanpapdi (Desi Ghee)","size":"800g","price":130,"mrp":350,"category":"Sweets","desc":"Premium soan papdi made with desi ghee.","inStock":true,"sample":false,"image":"images/10213d775cd1e509a23e9a9d7fae7330.webp","full":"images/4b3185cc23aad99ba82afe3d2bb43819.webp","brand":"Bikano","best":false},{"id":"sw34","name":"Bikano Premium Soan Papdi","size":"500 g","price":150,"mrp":300,"category":"Sweets","desc":"Soft, flaky soan papdi garnished with almonds and pistachio.","inStock":true,"sample":false,"image":"images/eccba5699355a0eb62462d823d8e0ebc.webp","full":"images/89f10e24b4c221a0d793b044230df499.webp","brand":"Bikano","best":false},{"id":"sw35","name":"MTR Classic Coconut Burfi","size":"200 g","price":125,"mrp":250,"category":"Sweets","desc":"Classic coconut burfi.","inStock":true,"sample":false,"image":"images/c0f4fc0c3d1ef147fe01187398775d79.webp","full":"images/38cfb8444f440414d681332f7940ade5.webp","brand":"MTR","best":false},{"id":"sw36","name":"MTR Classic Mysore Pak","size":"200 g","price":110,"mrp":220,"category":"Sweets","desc":"Classic Mysore pak. No added preservatives.","inStock":true,"sample":false,"image":"images/c58917c11b72fafa271e1be0b169604a.webp","full":"images/a612b9e59a20244320c3ed9d09eee7a3.webp","brand":"MTR","best":false},{"id":"sw37","name":"MTR Classic Besan Laddoo","size":"200 g","price":110,"mrp":220,"category":"Sweets","desc":"Classic besan laddoo. No added preservatives.","inStock":true,"sample":false,"image":"images/562895bb4434d5a346fb24c9b75553be.webp","full":"images/5a526b859322038ce79e3c23cee08ebb.webp","brand":"MTR","best":false},{"id":"ck7","name":"Harish Cookies Delight","size":"800g","price":262,"mrp":350,"category":"Cookies","desc":"Premium cookies: almond and coconut cookies.","inStock":true,"sample":false,"image":"images/042ee250f1a0f6db63a30e68d98685bc.webp","full":"images/a01489220e88583b7b68d8c5cad8c260.webp","brand":"Harish","best":false,"image2":"images/3a0d1ff4d67e92cbb5ee9d1670e998e9.webp","full2":"images/52807d56105e838dd3b612498ec9cffe.webp"},{"id":"ck8","name":"Dark Fantasy Festive Collection","size":"234g","price":90,"mrp":180,"category":"Cookies","desc":"Assorted choco cookies: choco-filled cookies and bourbon.","inStock":true,"sample":false,"image":"images/d74a9f1b7f992f3c5329e386090adc7a.webp","full":"images/205f7a5195cbd5a654ab92e08222af7d.webp","brand":"Dark Fantasy","best":false,"image2":"images/b118c6cac074230b849331b850096364.webp","full2":"images/7f6bef27bb205f7b2a8de55a6b7bbea1.webp"},{"id":"ck9","name":"Harish Baked Delicacies","size":"900g","price":326,"mrp":435,"category":"Cookies","desc":"Premium assortment: nan khatai, besan khatai and choco pista khatai.","inStock":true,"sample":false,"image":"images/2af6bedecad5af287a86e0b31340fd1e.webp","full":"images/42d4ced6c58ed1b58e05b453a6889672.webp","brand":"Harish","best":false},{"id":"ck10","name":"Harish Bakers Treat (Cookies)","size":"580g","price":236,"mrp":315,"category":"Cookies","desc":"Soan papdi, jam cookies and namkeen (haryal, nariyal, kishmish kesar).","inStock":true,"sample":false,"image":"images/6ce5db16bf097fce9e8f250f455c75f0.webp","full":"images/edec4275edf0342b9cb8a647b7872bc0.webp","brand":"Harish","best":false},{"id":"ck11","name":"Harish Festive Fusion","size":"540g","price":199,"mrp":265,"category":"Cookies","desc":"Premium cookies: fruity jam, coconut crunch and jeera cookies.","inStock":true,"sample":false,"image":"images/c4f6189daff554f2e5cdea34ac827710.webp","full":"images/9786f14d4a981402bb8c3f6964ecc9cd.webp","brand":"Harish","best":false},{"id":"ck12","name":"Dark Fantasy Expressions","size":"276g","price":180,"mrp":360,"category":"Cookies","desc":"Filled cookie collection with molten choco centre.","inStock":true,"sample":false,"image":"images/cc6f77dac91c38a466ae547bb102a50e.webp","full":"images/266c0422d94b2e1a8822d03902c92b01.webp","brand":"Dark Fantasy","best":false,"image2":"images/814301f46c9bf015cb9013a41e8d9180.webp","full2":"images/addf1999ea8795d6fd7ed3ea506d2289.webp"},{"id":"ck13","name":"Dark Fantasy Compliments","size":"300ml + 280g","price":275,"mrp":550,"category":"Cookies","desc":"Assorted choco collection: choco-filled cookies, choco pies and choco drink.","inStock":true,"sample":false,"image":"images/edf4a7ef681ea71ec5b2882eb15809c0.webp","full":"images/0afd73c5043d0130c522e31fc3eb5a42.webp","brand":"Dark Fantasy","best":false},{"id":"ck14","name":"Sapphire Butter Cookies","size":"Tin","price":400,"mrp":500,"category":"Cookies","desc":"Butter cookie collection, original Danish recipe.","inStock":true,"sample":false,"image":"images/3dcc75450db75878408976f16e01f168.webp","full":"images/08d0e5da5bd3a973dd7dab518d81fbcd.webp","brand":"Sapphire","best":false},{"id":"ck15","name":"White Castle Butter Cookies","size":"350 g tin","price":225,"mrp":450,"category":"Cookies","desc":"Assorted butter cookies in a gift tin.","inStock":true,"sample":false,"image":"images/9b21c2068ad4ddaa92e74237d0202a81.webp","full":"images/6512963ad9bce1a6a4cde1fded74f39a.webp","brand":"White Castle","best":false},{"id":"ch1","name":"Sapphire Truffle Selection Coconut","size":"810g","price":240,"mrp":300,"category":"Chocolates","desc":"Milk choco truffles with coconut flavoured cream and crispy rice.","inStock":true,"sample":false,"image":"images/285fe47e02bb6a0c806e7dfa806502f9.webp","full":"images/f75c189a7cec17b87e03c503f47af740.webp","brand":"Sapphire","best":false},{"id":"ch2","name":"Sapphire Truffle Selection Strawberry","size":"470g","price":140,"mrp":175,"category":"Chocolates","desc":"Milk choco truffles with strawberry flavoured cream and crispy rice.","inStock":true,"sample":false,"image":"images/7cdc0c745713e95afa197dae4df37e30.webp","full":"images/4a01e0f8710cdadb158fa09d687c1a60.webp","brand":"Sapphire","best":false},{"id":"ch3","name":"Ferrero Rocher Gift Box (Medium)","size":"200g / 16pc","price":467,"mrp":549,"category":"Chocolates","desc":"Hazelnut milk chocolates in a clear gift box.","inStock":true,"sample":false,"image":"images/11a9a31e4fcfe27675e00b73db7460b6.webp","full":"images/74ba8d58b141fcd5b6e32ec6ece6e384.webp","brand":"Ferrero Rocher","best":false},{"id":"ch4","name":"Ferrero Rocher Gift Box (Large)","size":"300g / 24pc","price":712,"mrp":759,"category":"Chocolates","desc":"Hazelnut milk chocolates in a large square gift box.","inStock":true,"sample":false,"image":"images/a1ca89941c1581d4ffc493352248c1fd.webp","full":"images/b0bf2a56ce983acae6f443864bceb385.webp","brand":"Ferrero Rocher","best":true},{"id":"ch5","name":"Ferrero Rocher 4 pcs","size":"50g / 4pc","price":152,"mrp":179,"category":"Chocolates","desc":"Roasted hazelnut, rich milk chocolate and crispy wafer.","inStock":true,"sample":false,"image":"images/92814010afcc7d25fb22f487c14749c7.webp","full":"images/aa79de5f820c0256cfde38ce52b13fc3.webp","brand":"Ferrero Rocher","best":false},{"id":"ch6","name":"Sapphire Assortment (Rose Tin)","size":"175g","price":380,"mrp":475,"category":"Chocolates","desc":"Whole hazelnuts and raisins covered in milk choco.","inStock":true,"sample":false,"image":"images/93ad51c9a1aafc43dbfdfd5d59510cd2.webp","full":"images/eacb2c2662f8057de33134fddfb76e43.webp","brand":"Sapphire","best":false},{"id":"ch7","name":"Sapphire Almonds (Pink Tin)","size":"175g","price":380,"mrp":475,"category":"Chocolates","desc":"Almonds covered in milk choco.","inStock":true,"sample":false,"image":"images/47bc4ce2c30c4a8516563f16fed114b6.webp","full":"images/7f0f8b2e457b585bb545ef93e0533d1e.webp","brand":"Sapphire","best":false},{"id":"ch8","name":"Sapphire Almonds (Gold Tin)","size":"300g","price":560,"mrp":700,"category":"Chocolates","desc":"Almonds covered with milk choco.","inStock":true,"sample":false,"image":"images/2ec6076a1b779d6d0c4f5bbb2aa2864c.webp","full":"images/dba72b418477d21b9b7e42f6c8798281.webp","brand":"Sapphire","best":false},{"id":"ch9","name":"Cadbury Dairy Milk Silk Selections","size":"158g","price":298,"mrp":350,"category":"Chocolates","desc":"Assortment of fine chocolates: a collection of nuts and roast almond.","inStock":true,"sample":false,"image":"images/142cbf332389cf21bae0eb68cff7411e.webp","full":"images/240142fe0a1b5cd4775e257069afa297.webp","brand":"Cadbury","best":false},{"id":"ch10","name":"Sapphire Assortment (Blue Tin)","size":"200g","price":420,"mrp":525,"category":"Chocolates","desc":"Almonds, hazelnuts and raisins covered in milk choco.","inStock":true,"sample":false,"image":"images/4d7ad6e726fff5304b892d02513f27c5.webp","full":"images/dd53477158fadd3ab25405a55064998f.webp","brand":"Sapphire","best":false},{"id":"ch11","name":"Yoga Bar The Chocolate Edit","size":"148g","price":140,"mrp":200,"category":"Chocolates","desc":"Chocolate gift box.","inStock":true,"sample":false,"image":"images/7e75d704e17a7c126878c06c88f20a9d.webp","full":"images/ebb9b3d138a0ab2630e91224023ddbd6.webp","brand":"Yoga Bar","best":false},{"id":"ch12","name":"Yoga Bar Love & Goodness","size":"375g","price":473,"mrp":675,"category":"Chocolates","desc":"Festive gift bag.","inStock":true,"sample":false,"image":"images/5822ba994606b4be2cff669957844d29.webp","full":"images/b2a5e41cb82788ce2e3b992c88982675.webp","brand":"Yoga Bar","best":false},{"id":"nk1","name":"Haldiram’s Teekha Meetha","brand":"Haldiram’s","size":"750 g","price":149,"mrp":299,"category":"Namkeens","desc":"Spicy-sweet namkeen mix with a tangy twist.","inStock":true,"sample":false,"best":false,"image":"images/c009cc7ed67797dd90fd70fb9d46b171.webp","full":"images/92835c7aa2e8850d40fa3c878e1d3d4b.webp"},{"id":"nk2","name":"Haldiram’s Bombay Mix","brand":"Haldiram’s","size":"750 g","price":149,"mrp":299,"category":"Namkeens","desc":"Crunchy and tasty savoury namkeen, perfect for snacking.","inStock":true,"sample":false,"best":false,"image":"images/3dd8b284e24fce56a2c4f34149b4717d.webp","full":"images/bf0a4b6dc084323308016f4b5850fd98.webp"},{"id":"nk3","name":"Bikano Diet Mixture","brand":"Bikano","size":"500 g","price":112,"mrp":225,"category":"Namkeens","desc":"Light and tasty diet mixture, rich in protein.","inStock":true,"sample":false,"best":false,"image":"images/576cf0602671458aa4aebe5ca0de167e.webp","full":"images/9a637daa62f4ec71a5a09fac1441d7c1.webp"},{"id":"nk4","name":"Haldiram’s Chatpata Mixture","brand":"Haldiram’s","size":"750 g","price":149,"mrp":299,"category":"Namkeens","desc":"Rich and tangy namkeen mixture bursting with zingy masala.","inStock":true,"sample":false,"best":false,"image":"images/af07660fe0759304bc45908b22d30a37.webp","full":"images/53f19211c2c7ed1e53677ac6c4138f40.webp"},{"id":"sw38","name":"Bikano Panjeeri Laddu","brand":"Bikano","size":"Box","price":140,"mrp":280,"category":"Sweets","desc":"Sweetened wheat flour balls with nuts.","inStock":true,"sample":false,"best":false,"image":"images/24f8a35d40e11518d6d79d8be6a5e79f.webp","full":"images/9e6e9449cdf80a95bfa2bccc20812e58.webp"},{"id":"sw39","name":"Bikano Besan Laddu","brand":"Bikano","size":"Box","price":140,"mrp":280,"category":"Sweets","desc":"Sweetened chickpea flour balls.","inStock":true,"sample":false,"best":false,"image":"images/4fe372d0b9745cbc1718585bd65bcb5f.webp","full":"images/77fdae5ef677a0e2af6af4d5599a3b95.webp"},{"id":"sw40","name":"Bikano Desi Ghee Soan Papdi","brand":"Bikano","size":"500 g","price":183,"mrp":215,"category":"Sweets","desc":"Soft and sweet floss made with desi ghee, garnished with dry fruits.","inStock":true,"sample":false,"best":false,"image":"images/438372cf9dd5e46d6a422d465169e70b.webp","full":"images/026f5bcb066cae35322317db0bee382b.webp"},{"id":"sw41","name":"Bikano Desi Ghee Soan Papdi","brand":"Bikano","size":"900 g","price":0,"mrp":0,"category":"Sweets","desc":"Soft and sweet floss made with desi ghee, garnished with dry fruits.","inStock":true,"sample":false,"best":false,"image":"images/bb53196260a3d465778434ef673faf4e.webp","full":"images/21aee484bd357b3a8c2d5f700f34f23c.webp"},{"id":"sw42","name":"Bikano Dry Petha","brand":"Bikano","size":"400 g","price":102,"mrp":120,"category":"Sweets","desc":"Delicious ash gourd sweets.","inStock":true,"sample":false,"best":false,"image":"images/593221c30d5792fa87d8cefb23954d86.webp","full":"images/cad35564505580f41fae77ef93ab25f8.webp"},{"id":"sw43","name":"Bikano Royal Patisa","brand":"Bikano","size":"800 g","price":280,"mrp":560,"category":"Sweets","desc":"Delicious cubes made from chickpea and wheat flour, garnished with almonds.","inStock":true,"sample":false,"best":false,"image":"images/2f62915338925771af0619752960d564.webp","full":"images/a79288d321933d95632fa2f149a6ed57.webp"},{"id":"ch13","name":"Cadbury Celebrations (Festive Gifting)","brand":"Cadbury","size":"109.6g 9 items","price":99,"mrp":110,"category":"Chocolates","desc":"Assorted Cadbury chocolates in a festive gift box.","inStock":true,"sample":false,"best":false,"image":"images/e6149850031662f3201d624ddedcfbbb.webp","full":"images/cf498df883fcf855781e8693a4f50ee2.webp"},{"id":"ch14","name":"Cadbury Celebrations Premium Selections","brand":"Cadbury","size":"163g 5 items","price":234,"mrp":275,"category":"Chocolates","desc":"Premium assortment: Dairy Milk Silk, Crispello, Nutties, Star 3D and more.","inStock":true,"sample":false,"best":false,"image":"images/108e43dfa6cb16893f72052256b5310c.webp","full":"images/a1d3f2a4908f626f9e9f2f9d7d8383eb.webp"},{"id":"ch15","name":"Cadbury Celebrations Gift Pack","brand":"Cadbury","size":"51.2g 5 items","price":47,"mrp":50,"category":"Chocolates","desc":"Assorted pack with Dairy Milk and Gems.","inStock":true,"sample":false,"best":false,"image":"images/fa000f0108a82fd5fb02d07921e62a48.webp","full":"images/92955506e8385135121ba78ce6ed8ffb.webp"},{"id":"ch16","name":"Cadbury Choclairs Delights","brand":"Cadbury","size":"285.6g 51 unit 5.6","price":135,"mrp":150,"category":"Chocolates","desc":"Chocolate-filled caramel toffees in a festive gift box.","inStock":true,"sample":false,"best":false,"image":"images/7ac8de3cf5267cf4d4b92ff868e8a27d.webp","full":"images/93d532c8c48e056a214a8b4365846da8.webp"},{"id":"ch17","name":"Cadbury Bournville Assorted Collection","brand":"Cadbury","size":"Gift box","price":0,"mrp":0,"category":"Chocolates","desc":"50% dark chocolate assorted collection.","inStock":true,"sample":false,"best":false,"image":"images/38c67bc2d7926cad790cc6a23911ca8b.webp","full":"images/1d1cda58323537200488975f3e4f2723.webp"},{"id":"nk5","name":"Bikano Uphaar","brand":"Bikano","size":"Gift box","price":264,"mrp":310,"category":"Namkeens","desc":"Festive gift box of namkeens and gulab jamun.","inStock":true,"sample":false,"best":false,"image":"images/13e5ae929e44b1edb9994d2444f2a62f.webp","full":"images/3a07d0930dffc703a89fb357bc941438.webp"},{"id":"sw44","name":"Tauffa Dates Bliss (Almond)","brand":"Tauffa","size":"400 g","price":495,"mrp":700,"category":"Sweets","desc":"Dates and dry fruit bites with almonds, cashews and pistachios. 0% added sugar, high in protein, made with A2 cow ghee.","inStock":true,"sample":false,"best":false,"image":"images/0c45c68978f1b0b5d85909980e826b43.webp","full":"images/4092a6f667200802f02de1efd3b1eb61.webp"},{"id":"sw45","name":"Tauffa Dates Bliss (Pistachio)","brand":"Tauffa","size":"200 g","price":324,"mrp":499,"category":"Sweets","desc":"Dates and pistachio-rich dry fruit bites. 0% added sugar, high in protein, made with A2 cow ghee.","inStock":true,"sample":false,"best":false,"image":"images/e3fa52fc1fd9d0df0b72eeaf7b50281a.webp","full":"images/c8d99f3b0d07017003b3f2177c957740.webp"},{"id":"ch18","name":"Sapphire Truffle Selection Choco","brand":"Sapphire","size":"Box","price":0,"mrp":0,"category":"Chocolates","desc":"Milk choco truffles with chocolate flavoured cream and crispy rice.","inStock":true,"sample":false,"best":false,"image":"images/e79824b8a1c211f5cf7dc775fb81e768.webp","full":"images/abc41a56f57172ed40bad2c75cccc196.webp"},{"id":"ch19","name":"Sapphire Truffle Selection Hazelnut","brand":"Sapphire","size":"Box","price":0,"mrp":0,"category":"Chocolates","desc":"Milk choco truffles with hazelnut flavoured cream and crispy rice.","inStock":true,"sample":false,"best":false,"image":"images/9257d587b89b2ce2e6d85714e1956412.webp","full":"images/735f51599b4773c52d0ed0b393bcaf69.webp"},{"id":"ch20","name":"Sapphire Truffle Selection Strawberry (Square box)","brand":"Sapphire","size":"Box","price":0,"mrp":0,"category":"Chocolates","desc":"Milk choco truffles with strawberry flavoured cream and crispy rice.","inStock":true,"sample":false,"best":false,"image":"images/1ed7dfeef51df6138d865da55016ee8d.webp","full":"images/12a7766b2f7f36fcbab8481e9033f10c.webp"},{"id":"ch21","name":"Sapphire Truffle Selection Orange","brand":"Sapphire","size":"Box","price":0,"mrp":0,"category":"Chocolates","desc":"Milk choco truffles with orange flavoured cream and crispy rice.","inStock":true,"sample":false,"best":false,"image":"images/538d82a3ecc9dabca0f546b94dd518ba.webp","full":"images/596cca3b425dce64a9a0a82c496bd8a4.webp"},{"id":"ju1","name":"Real Greetings Juice Gift Pack (Orange box)","brand":"Real","size":"Gift box","price":0,"mrp":0,"category":"Juices","desc":"Real Fruit Power ready-to-serve fruit beverages in a festive gift box. Wishes of health and happiness.","inStock":true,"sample":false,"best":false,"image":"images/9e806e25533bb8c95744c5d2d3859eca.webp","full":"images/87f6747c51723f7502632b7e18d48655.webp"},{"id":"ju2","name":"Real Greetings Juice Gift Pack (Gold box)","brand":"Real","size":"Gift box","price":0,"mrp":0,"category":"Juices","desc":"Real Fruit Power ready-to-serve fruit beverages in a premium gold gift box with bow.","inStock":true,"sample":false,"best":false,"image":"images/abab817e73747ecbdfef4954bba11287.webp","full":"images/88bcf0bedd8604effc10029e1c5b91d7.webp"},{"id":"ju3","name":"Real Koolerz Mango Gift Pack","brand":"Real","size":"Gift pack","price":0,"mrp":0,"category":"Juices","desc":"Real Fruit Power Koolerz mango fruit drink packs in a gift box.","inStock":true,"sample":false,"best":false,"image":"images/28f0f499064d2b3a4cca8100c245de93.webp","full":"images/d713297df53e3670109dc2d0c4536ebc.webp"},{"id":"ju4","name":"Real Greetings Orange Juice Gift Box","brand":"Real","size":"Gift box with handle","price":0,"mrp":0,"category":"Juices","desc":"Real Fruit Power orange juice packs in a festive gift box with carry handle.","inStock":true,"sample":false,"best":false,"image":"images/2ef145ade76a7ade74041a406972e75d.webp","full":"images/0cc5edb08da473ba05a71cbb019d3ec6.webp"},{"id":"ju5","name":"Real Greetings Festive Delight Bag","brand":"Real","size":"Gift bag","price":0,"mrp":0,"category":"Juices","desc":"Real Fruit Power juices in a festive carry bag. Free Real 180 ml (Tetra) worth ₹40 inside.","inStock":true,"sample":false,"best":false,"image":"images/3d139db9ec49b3f77b35cde590e9aa48.webp","full":"images/f3b6343c64e3b926a3778ed3a964ce3a.webp"},{"id":"sw46","name":"Gowardhan Khushiyan","brand":"Gowardhan","size":"380 g","price":0,"mrp":0,"category":"Sweets","desc":"Assorted sweets gift pack in a festive box.","inStock":true,"sample":false,"best":false,"image":"images/4735d521cc4435a938e73354fdcccd8d.webp","full":"images/6a13bf46de7dac2f1f2e3d73be3de172.webp"},{"id":"sw47","name":"Bikano Albela","brand":"Bikano","size":"Gift box","price":0,"mrp":0,"category":"Sweets","desc":"Festive gift box of sweets and namkeen: barfi, bhujia and mixture.","inStock":true,"sample":false,"best":false,"image":"images/a45c585c9f67bfd3c9c553594a5da5f5.webp","full":"images/53a8e6e095d4379556ace42453b78ac7.webp"},{"id":"df1","name":"Pista (Pistachios)","brand":"","size":"Loose · choose weight","price":1980,"mrp":0,"category":"Dry Fruits","desc":"Premium roasted and salted pistachios.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df2","name":"Badam (Almonds)","brand":"","size":"Loose · choose weight","price":1240,"mrp":0,"category":"Dry Fruits","desc":"Premium California almonds.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df3","name":"Kaju (Cashews)","brand":"","size":"Loose · choose weight","price":1040,"mrp":0,"category":"Dry Fruits","desc":"Premium whole cashews.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df4","name":"Kishmish (Raisins)","brand":"","size":"Loose · choose weight","price":540,"mrp":0,"category":"Dry Fruits","desc":"Sweet golden raisins.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df5","name":"Akhrot (Walnuts)","brand":"","size":"Loose · choose weight","price":1600,"mrp":0,"category":"Dry Fruits","desc":"Walnut kernels, rich in omega-3.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df6","name":"Kaju 180 (Jumbo)","brand":"","size":"Loose · choose weight","price":1500,"mrp":0,"category":"Dry Fruits","desc":"Largest whole cashews – W180 grade, about 180 nuts per pound.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df7","name":"Kaju 240","brand":"","size":"Loose · choose weight","price":1250,"mrp":0,"category":"Dry Fruits","desc":"Large whole cashews – W240 grade, about 240 nuts per pound.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df8","name":"Kaju 320","brand":"","size":"Loose · choose weight","price":1040,"mrp":0,"category":"Dry Fruits","desc":"Regular whole cashews – W320 grade, about 320 nuts per pound.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df9","name":"Real Nut Cashew Roasted & Salted","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Crunchy roasted cashews, lightly salted.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df10","name":"Real Nut Cashew Roasted & Masala","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Roasted cashews tossed in a tangy masala.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df11","name":"Badam Gurbandi","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Small, rich-flavoured Gurbandi almonds.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df12","name":"Badam Sanora","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Sanora almonds with a naturally sweet taste.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df13","name":"Badam Afghani","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Afghani almonds with a rich, nutty taste.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df14","name":"Mamra Giri Almond","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Premium Mamra almond kernels – high in natural oil.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df15","name":"Almonds Roasted & Salted","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Crunchy roasted almonds, lightly salted.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df16","name":"Akhrot Sabut (Walnuts in Shell)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Whole walnuts in the shell.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df17","name":"Kishmish Lambi (Long Raisins)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Long green raisins, sweet and juicy.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df18","name":"Black Kishmish (Black Raisins)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Seedless black raisins, rich in iron.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df19","name":"Khurmani (Dried Apricots)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Sweet dried apricots.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df20","name":"Chuara (Dry Dates)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Dried dates – a winter favourite.","inStock":true,"sample":false,"best":false,"byWeight":true},{"id":"df21","name":"Black Chuara (Black Dry Dates)","brand":"","size":"Loose · choose weight","price":0,"mrp":0,"category":"Dry Fruits","desc":"Dark dried dates, soft and sweet.","inStock":true,"sample":false,"best":false,"byWeight":true}]}</script>
+<script id="app-script">
+(function(){
+  var app=document.getElementById('app');
+  var state;
+  try{state=JSON.parse(document.getElementById('store-data').textContent)}catch(e){state={store:{name:'Gift Pack Shop'},packs:[]}}
+  var CATS=['Namkeens','Chocolates','Sweets','Cookies','Dry Fruits','Hampers','Perfumes','Juices'];
+  var KEY='giftcart-v1';
+  var cart={}; try{cart=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){cart={}}
+  var pendingLogo;
+  var pend={};
+  var assetsApi=null;
+  function toBlobUrl(dataUrl){
+    if(!assetsApi||typeof dataUrl!=='string'||dataUrl.indexOf('data:')!==0)return Promise.resolve(dataUrl);
+    var mt=dataUrl.slice(5,dataUrl.indexOf(';')),bin=atob(dataUrl.split(',')[1]),arr=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
+    return assetsApi.upload(new Blob([arr],{type:mt})).then(function(r){return '/_blob/'+r.id});
+  }
+  function storePend(){
+    var jobs=[];
+    ['image','image2'].forEach(function(k){var o=pend[k];if(o&&typeof o==='object'){jobs.push(Promise.all([toBlobUrl(o.t),toBlobUrl(o.f)]).then(function(r){o.t=r[0];o.f=r[1]}))}});
+    return Promise.all(jobs);
+  }
+  var canEdit=false, artifactApi=null, manage=false, dirty=false, sheet=null, curId=null, confirmDel=null, cat='All', q='', pendingImage;
+
+  var I={
+    search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
+    cart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>',
+    share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4"/></svg>',
+    wa:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>',
+    copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>',
+    star:'<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z" fill="#F2A33A"/></svg>',
+    grid:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2" fill="#C2185B"/><rect x="13" y="3" width="8" height="8" rx="2" fill="#F2A33A"/><rect x="3" y="13" width="8" height="8" rx="2" fill="#FF8A1F"/><rect x="13" y="13" width="8" height="8" rx="2" fill="#8C2366"/></svg>',
+    zoom:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>',
+    phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 8v6M9 11h6"/></svg>',
+    gift:'<svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="2" fill="#8C2366"/><rect x="2" y="7" width="20" height="4" rx="1.5" fill="#C2185B"/><rect x="10.5" y="7" width="3" height="14" fill="#F2A33A"/><path d="M12 7c-2-4-6-4-5-1 .5 1.2 3 1 5 1zm0 0c2-4 6-4 5-1-.5 1.2-3 1-5 1z" fill="#F2A33A"/></svg>'
+  };
+  var CAT_ICON={
+    Namkeens:{bg:'#FFE7CC',svg:'<svg viewBox="0 0 48 48"><path d="M12 8h24l-2 4 2 4-2 4 2 4-2 4 2 4-2 4 2 4H12l2-4-2-4 2-4-2-4 2-4-2-4 2-4-2-4z" fill="#FF8A1F"/><rect x="14" y="17" width="20" height="14" rx="3" fill="#FFE08A"/><circle cx="20" cy="24" r="2" fill="#C2410C"/><circle cx="26" cy="22" r="1.6" fill="#C2410C"/><circle cx="27" cy="27" r="1.8" fill="#C2410C"/></svg>'},
+    Chocolates:{bg:'#F3E1D6',svg:'<svg viewBox="0 0 48 48"><rect x="11" y="6" width="26" height="36" rx="3" fill="#6B3A2A"/><g fill="#8A4E37"><rect x="14" y="9" width="9" height="9" rx="1.5"/><rect x="25" y="9" width="9" height="9" rx="1.5"/><rect x="14" y="20" width="9" height="9" rx="1.5"/><rect x="25" y="20" width="9" height="9" rx="1.5"/></g><path d="M11 30h26v9a3 3 0 0 1-3 3H14a3 3 0 0 1-3-3z" fill="#C2185B"/></svg>'},
+    Sweets:{bg:'#FFEFC2',svg:'<svg viewBox="0 0 48 48"><ellipse cx="24" cy="38" rx="18" ry="5" fill="#C9A227"/><circle cx="16" cy="30" r="7" fill="#FF9F1C"/><circle cx="32" cy="30" r="7" fill="#FF9F1C"/><circle cx="24" cy="20" r="7" fill="#FFB547"/><g fill="#FFE08A"><circle cx="14" cy="28" r="1"/><circle cx="18" cy="31" r="1"/><circle cx="30" cy="28" r="1"/><circle cx="34" cy="31" r="1"/><circle cx="22" cy="18" r="1"/><circle cx="26" cy="21" r="1"/></g></svg>'},
+    Cookies:{bg:'#F6E6D2',svg:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#D99A4E"/><circle cx="24" cy="24" r="16" fill="none" stroke="#B9772F" stroke-width="2"/><g fill="#5A2E1A"><circle cx="18" cy="18" r="2.4"/><circle cx="29" cy="16" r="2"/><circle cx="30" cy="28" r="2.6"/><circle cx="19" cy="30" r="2.2"/><circle cx="24" cy="23" r="1.6"/></g></svg>'},
+    Hampers:{bg:'#FBE0EA',svg:'<svg viewBox="0 0 48 48"><path d="M12 22a12 12 0 0 1 24 0" fill="none" stroke="#8C2366" stroke-width="3"/><circle cx="18" cy="20" r="4" fill="#FF8A1F"/><circle cx="25" cy="18" r="4.5" fill="#F2A33A"/><circle cx="31" cy="21" r="3.5" fill="#C2185B"/><path d="M7 22h34l-4 18a3 3 0 0 1-3 2H14a3 3 0 0 1-3-2z" fill="#C47A1B"/><path d="M10 28h28M11 34h26" stroke="#A15F12" stroke-width="2"/></svg>'},
+    Juices:{bg:'#DFF5E3',svg:'<svg viewBox="0 0 48 48"><path d="M18 4h12v5l4 6v26a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3V15l4-6z" fill="#FF9F1C"/><path d="M18 4h12v5H18z" fill="#2E8B57"/><rect x="14" y="21" width="20" height="13" fill="#FFF3D6"/><circle cx="24" cy="27.5" r="4.5" fill="#F25C3A"/><path d="M24 23v-2.5" stroke="#2E8B57" stroke-width="2"/></svg>'},
+    'Dry Fruits':{bg:'#F6E3C8',svg:'<svg viewBox="0 0 48 48"><path d="M8 26h32a16 12 0 0 1-32 0z" fill="#C98C2B"/><ellipse cx="18" cy="22" rx="6" ry="3.5" fill="#9C5A2D" transform="rotate(-25 18 22)"/><ellipse cx="28" cy="20" rx="5" ry="3.4" fill="#E2CBA0"/><ellipse cx="28" cy="20" rx="3" ry="1.4" fill="#7DAA3C"/><path d="M33 24a5 5 0 1 1 6-5" stroke="#F0DDB4" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'},
+    Perfumes:{bg:'#EADFFB',svg:'<svg viewBox="0 0 48 48"><rect x="20" y="5" width="8" height="7" rx="1.5" fill="#F2A33A"/><rect x="22" y="12" width="4" height="4" fill="#C9A227"/><rect x="11" y="16" width="26" height="27" rx="7" fill="#9B6BDA"/><rect x="15" y="21" width="18" height="17" rx="4" fill="#C7A8F2"/><path d="M18 30h12" stroke="#7A4CC0" stroke-width="2"/></svg>'}
+  };
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function money(n){return '₹'+Number(n||0).toLocaleString('en-IN')}
+  function saveCart(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+  function pack(id){for(var i=0;i<state.packs.length;i++)if(state.packs[i].id===id)return state.packs[i];return null}
+  function wl(g){g=Number(g);return g>=1000?(Math.round(g/100)/10)+' kg':g+' g'}
+  function wPack(p,g,key){return Object.assign({},p,{id:key,size:wl(g),price:p.price>0?Math.round(p.price*g/1000):0,mrp:p.mrp>0?Math.round(p.mrp*g/1000):0,byWeight:false,_g:g})}
+  function cartLines(){var out=[];Object.keys(cart).forEach(function(id){var k=id.split('@'),p=pack(k[0]);if(!p||!(cart[id]>0)||!p.inStock)return;if(k.length>1){var g=Number(k[1]);if(!(g>0))return;out.push({p:wPack(p,g,id),q:cart[id]})}else if(!p.byWeight)out.push({p:p,q:cart[id]})});return out}
+  function cartCount(){return cartLines().reduce(function(a,l){return a+l.q},0)}
+  function cartTotal(){return cartLines().reduce(function(a,l){return a+l.q*(l.p.price>0?l.p.price:0)},0)}
+  function unpriced(){return cartLines().filter(function(l){return !(l.p.price>0)}).reduce(function(a,l){return a+l.q},0)}
+  function pr(p){return p.price>0?money(p.price)+(p.byWeight?'<small class="perkg">/kg</small>':''):'Ask price'}
+  function lineAmt(l){return l.p.price>0?money(l.q*l.p.price):'Price to confirm'}
+  function cartMrp(){return cartLines().reduce(function(a,l){return a+(l.p.price>0?l.q*Math.max(l.p.mrp||0,l.p.price):0)},0)}
+  function waNumber(){var d=String(state.store.whatsapp||'').replace(/\D/g,'');if(d.length===10)d='91'+d;return d.length>=11?d:''}
+  function toast(msg){var t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove()},2200)}
+  function offBadge(p){var o=offPct(p);return o<=15?money(p.mrp-p.price)+'<br>OFF':o+'%<br>OFF'}
+  function offPct(p){return p.price>0&&p.mrp&&p.mrp>p.price?Math.round((p.mrp-p.price)/p.mrp*100):0}
+  function catCount(c){return state.packs.filter(function(p){return p.category===c}).length}
+  var sortBy='rec',brand='All';
+  function norm(s){return String(s||'').toLowerCase().replace(/[’'`]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+  function phon(w){return w.replace(/ph/g,'f').replace(/w/g,'v').replace(/z/g,'j').replace(/q/g,'k').replace(/ck/g,'k').replace(/ee/g,'i').replace(/oo/g,'u').replace(/ou/g,'u').replace(/aa/g,'a').replace(/y/g,'i').replace(/(.)\1+/g,'$1').replace(/h/g,'').replace(/([a-z]{3,})s$/,'$1')}
+  function lev(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;for(i=1;i<=a.length;i++){var c=[i],mn=i;for(j=1;j<=b.length;j++){c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));if(c[j]<mn)mn=c[j]}if(mn>max)return max+1;p=c}return p[b.length]}
+  function wordScore(t,w){if(w===t)return 3;if(w.indexOf(t)===0)return 2.6;if(t.length>=3&&w.indexOf(t)>=0)return 2;var pt=phon(t),pw=phon(w);if(pw===pt)return 2.4;if(pt.length>=2&&pw.indexOf(pt)===0)return 2.2;var max=pt.length<=3?0:(pt.length<=6?1:2);if(max&&lev(pt,pw,max)<=max)return 1.6;if(max&&pw.length>pt.length&&lev(pt,pw.slice(0,pt.length),max)<=max)return 1.3;return 0}
+  function matchScore(p,query){var toks=norm(query).split(' ').filter(Boolean);if(!toks.length)return 1;
+    var nameW=norm(p.name+' '+(p.brand||'')).split(' '),otherW=norm((p.category||'')+' '+(p.size||'')+' '+(p.desc||'')).split(' '),tot=0,hit=0;
+    toks.forEach(function(t){var best=0;nameW.forEach(function(w){var s=wordScore(t,w)*1.5;if(s>best)best=s});otherW.forEach(function(w){var s=wordScore(t,w);if(s>best)best=s});if(best>0)hit++;tot+=best});
+    var jq=phon(norm(query).replace(/ /g,'')),jn=phon(norm(p.name).replace(/ /g,''));if(jq.length>=4&&jn.indexOf(jq)>=0){tot+=4;hit=Math.max(hit,toks.length)}
+    if(hit===0)return 0;if(toks.length>1&&hit<Math.ceil(toks.length*0.6))return 0;return tot+hit*2}
+  function inCat(){var t=q.trim();var l=state.packs.filter(function(p){return (cat==='All'||p.category===cat)&&(manage||!isSoon(p.category))});
+    if(!t)return l;var sc=l.map(function(p,i){return [p,matchScore(p,t),i]}).filter(function(x){return x[1]>0});
+    sc.sort(function(a,b){return b[1]-a[1]||a[2]-b[2]});return sc.map(function(x){return x[0]})}
+  function visible(){var l=inCat().filter(function(p){return brand==='All'||p.brand===brand});
+    if(sortBy!=='rec'){var dir=sortBy==='low'?1:-1;l=l.map(function(p,i){return [p,i]}).sort(function(a,b){var pa=a[0].price>0,pb=b[0].price>0;if(pa!==pb)return pa?-1:1;if(!pa)return a[1]-b[1];return (a[0].price-b[0].price)*dir||a[1]-b[1]}).map(function(x){return x[0]})}
+    return l}
+  function brandsHere(){var m={};inCat().forEach(function(p){if(p.brand)m[p.brand]=(m[p.brand]||0)+1});return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b)}).map(function(b){return [b,m[b]]})}
+  function filtersHTML(){var bs=brandsHere();
+    var h='<div class="frow"><label class="sortl" for="sortSel">Sort<select id="sortSel"><option value="rec"'+(sortBy==='rec'?' selected':'')+'>Recommended</option><option value="low"'+(sortBy==='low'?' selected':'')+'>Price: Low to High</option><option value="high"'+(sortBy==='high'?' selected':'')+'>Price: High to Low</option></select></label>'+((brand!=='All'||sortBy!=='rec')?'<button class="clr" id="clearF">Clear filters</button>':'')+'</div>';
+    if(bs.length>1||brand!=='All')h+='<div class="bchips" aria-label="Filter by brand"><span class="bl">Brands</span><button class="bchip'+(brand==='All'?' on':'')+'" data-brand="All">All</button>'+bs.map(function(b){return '<button class="bchip'+(brand===b[0]?' on':'')+'" data-brand="'+esc(b[0])+'">'+esc(b[0])+' <small>'+b[1]+'</small></button>'}).join('')+'</div>';
+    return h}
+  function shopUrl(){return state.store.url||''}
+  function packUrl(p){return shopUrl()?shopUrl()+'#'+p.id:''}
+  function openLink(url){var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+  function copyText(text,okMsg,fallbackId){
+    var fb=function(){var o=document.getElementById(fallbackId);if(o)o.innerHTML='<p class="hint" style="text-align:left;margin:8px 0 4px">Select and copy:</p><div class="linkbox">'+esc(text)+'</div>'};
+    try{navigator.clipboard.writeText(text).then(function(){toast(okMsg)},fb)}catch(e){fb()}
+  }
+
+  /* ---------- festive art ---------- */
+  function marigold(cx,cy,r,c1,c2){var h='',i;for(i=0;i<12;i++){var a=i*Math.PI/6;h+='<circle cx="'+(cx+Math.cos(a)*r*.62).toFixed(1)+'" cy="'+(cy+Math.sin(a)*r*.62).toFixed(1)+'" r="'+(r*.42).toFixed(1)+'" fill="'+c1+'"/>'}for(i=0;i<8;i++){var b=i*Math.PI/4+.3;h+='<circle cx="'+(cx+Math.cos(b)*r*.3).toFixed(1)+'" cy="'+(cy+Math.sin(b)*r*.3).toFixed(1)+'" r="'+(r*.34).toFixed(1)+'" fill="'+c2+'"/>'}return h+'<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.2).toFixed(1)+'" fill="#B4400F"/>'}
+  function leaf(x,y,rot){return '<path d="M0 0 q7 9 0 20 q-7 -11 0 -20z" fill="#2E8B57" transform="translate('+x+' '+y+') rotate('+rot+')"/>'}
+  function toranSVG(){var W=1200,h='<path d="M0 4 Q600 16 1200 4" stroke="#C47A1B" stroke-width="2" fill="none"/>',n=30,st=W/n;
+    for(var i=0;i<n;i++){var x=i*st+st/2,y=4+12*Math.sin(Math.PI*x/W),big=i%2===0;
+      h+=leaf(x-7,y,-35)+leaf(x+7,y,35)+marigold(x,y+9,8,big?'#FF8A1F':'#FFC23A',big?'#FFB347':'#FFD970');
+      h+=big?marigold(x,y+25,6.5,'#FFC23A','#FFE08A')+'<circle cx="'+x+'" cy="'+(y+36)+'" r="2.6" fill="#E8487A"/>':'<circle cx="'+x+'" cy="'+(y+20)+'" r="2.4" fill="#E8487A"/>'}
+    return '<svg viewBox="0 0 1200 46" preserveAspectRatio="xMidYMin slice" aria-hidden="true">'+h+'</svg>'}
+  function flourishSVG(flip){return '<svg viewBox="0 0 120 28" aria-hidden="true"'+(flip?' style="transform:scaleX(-1)"':'')+'><path d="M4 14 H96" stroke="#E7B9A4" stroke-width="1.5"/>'+leaf(60,14,-60)+leaf(78,14,-120)+marigold(108,14,9,'#FF8A1F','#FFC23A')+'</svg>'}
+  (function(){try{var t='<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140"><g opacity=".09">';
+    function fl(cx,cy,r,c){var g='';for(var i=0;i<8;i++){var a=i*Math.PI/4,x=(cx+Math.cos(a)*r).toFixed(1),y=(cy+Math.sin(a)*r).toFixed(1);g+='<ellipse cx="'+x+'" cy="'+y+'" rx="'+(r*.75).toFixed(1)+'" ry="'+(r*.38).toFixed(1)+'" transform="rotate('+(i*45)+' '+x+' '+y+')" fill="'+c+'"/>'}return g+'<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.45)+'" fill="#E8731A"/>'}
+    t+=fl(35,35,9,'#C2185B')+fl(105,105,9,'#E8731A')+'<circle cx="105" cy="35" r="3" fill="#C2185B"/><circle cx="35" cy="105" r="3" fill="#E8731A"/></g></svg>';
+    document.documentElement.style.setProperty('--pattern','url("data:image/svg+xml,'+encodeURIComponent(t)+'")')}catch(e){}})();
+  function startPetals(){
+    var red=false;try{red=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+    if(red||document.getElementById('petals'))return;
+    var cv=document.createElement('canvas');cv.id='petals';cv.setAttribute('aria-hidden','true');document.body.appendChild(cv);
+    var g=cv.getContext('2d'),W,H,dpr=Math.min(2,window.devicePixelRatio||1),ps=[],cols=['#FF8A1F','#FFC23A','#E8487A','#F25C3A'];
+    function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0)}size();addEventListener('resize',size);
+    function np(any){return{x:Math.random()*W,y:any?Math.random()*H:-12,s:Math.random()*4+4,vy:Math.random()*.5+.35,vx:Math.random()*.4-.2,r:Math.random()*6,vr:(Math.random()-.5)*.04,w:Math.random()*6,c:cols[Math.floor(Math.random()*4)]}}
+    for(var i=0;i<12;i++)ps.push(np(true));
+    (function f(){g.clearRect(0,0,W,H);for(var i=0;i<ps.length;i++){var p=ps[i];p.y+=p.vy;p.w+=.02;p.x+=p.vx+Math.sin(p.w)*.4;p.r+=p.vr;if(p.y>H+12)ps[i]=np(false);
+      g.save();g.translate(p.x,p.y);g.rotate(p.r);g.globalAlpha=.7;g.fillStyle=p.c;g.beginPath();g.ellipse(0,0,p.s,p.s*.55,0,0,7);g.fill();g.restore()}
+      requestAnimationFrame(f)})();
+  }
+  function drawDiya(cv){
+    if(!cv)return;var g=cv.getContext('2d');g.clearRect(0,0,192,192);
+    g.save();g.translate(0,-8);var glow=g.createRadialGradient(96,70,4,96,70,80);glow.addColorStop(0,'rgba(255,214,90,.75)');glow.addColorStop(1,'rgba(255,214,90,0)');
+    g.fillStyle=glow;g.beginPath();g.arc(96,80,80,0,7);g.fill();
+    g.fillStyle='#FFB020';g.beginPath();g.moveTo(96,30);g.bezierCurveTo(118,62,112,92,96,96);g.bezierCurveTo(80,92,74,62,96,30);g.fill();
+    g.fillStyle='#FFF2B0';g.beginPath();g.moveTo(96,54);g.bezierCurveTo(106,72,104,88,96,92);g.bezierCurveTo(88,88,86,72,96,54);g.fill();
+    var bowl=g.createLinearGradient(0,96,0,150);bowl.addColorStop(0,'#FF8A1F');bowl.addColorStop(1,'#B4400F');
+    g.fillStyle=bowl;g.beginPath();g.moveTo(36,100);g.lineTo(156,100);g.quadraticCurveTo(150,150,96,152);g.quadraticCurveTo(42,150,36,100);g.fill();
+    g.fillStyle='#FFD54A';for(var i=0;i<7;i++){g.beginPath();g.arc(52+i*14.7,116,3.2,0,7);g.fill()}g.restore();
+    function mg(x,y,r,c1,c2){for(var k=0;k<12;k++){var t=k*Math.PI/6;g.fillStyle=c1;g.beginPath();g.arc(x+Math.cos(t)*r*.62,y+Math.sin(t)*r*.62,r*.42,0,7);g.fill()}g.fillStyle=c2;g.beginPath();g.arc(x,y,r*.5,0,7);g.fill();g.fillStyle='#B4400F';g.beginPath();g.arc(x,y,r*.18,0,7);g.fill()}
+    g.fillStyle='#2E8B57';[[22,160,-.6],[170,160,.6]].forEach(function(l){g.save();g.translate(l[0],l[1]);g.rotate(l[2]);g.beginPath();g.ellipse(0,0,14,6,0,0,7);g.fill();g.restore()});
+    mg(40,164,16,'#FF8A1F','#FFB347');mg(152,164,16,'#FFC23A','#FFE08A');mg(96,172,13,'#E8487A','#F48FB1');
+  }
+
+  /* ---------- product pieces ---------- */
+  function art(p){if(p.category==='Dry Fruits')return '<div class="art dfnp"><b>'+esc(p.name.replace(/\s*\(.*\)$/,''))+'</b><small>Photo coming soon</small></div>';var c=CAT_ICON[p.category],h=p.hue==null?30:p.hue;
+    return '<div class="art" style="background:'+(c?c.bg:'hsl('+h+' 70% 94%)')+'">'+(c?c.svg:I.gift)+'</div>'}
+  function photos(p){return [p.full||p.image,p.full2||p.image2].filter(Boolean)}
+  function pic(p){return p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" loading="lazy">':art(p)}
+  function addCtl(p,big){
+    if(!p.inStock)return big?'<button class="btn" disabled>Out of stock</button>':'';
+    if(p.byWeight&&!big){var inC=Object.keys(cart).filter(function(k){return k.indexOf(p.id+'@')===0&&cart[k]>0}).length;return '<button class="add" data-view="'+p.id+'">'+(inC?'\u2713 Added':'CHOOSE')+'</button>'}
+    var n=cart[p.id]||0;
+    if(n>0)return '<span class="step"><button data-dec="'+p.id+'" aria-label="Remove one">−</button><span>'+n+'</span><button data-inc="'+p.id+'" aria-label="Add one">+</button></span>';
+    return big?'<button class="btn berry" data-inc="'+p.id+'">Add to cart</button>':'<button class="add" data-inc="'+p.id+'">ADD</button>';
+  }
+  var selG={};
+  function weightBox(p){var g=selG[p.id]||250,opts=[100,250,500,1000];
+    var h='<div class="wbox"><div class="wlab">Choose quantity</div><div class="wopts">'+opts.map(function(o){return '<button class="wopt'+(o===g?' on':'')+'" data-wg="'+o+'">'+wl(o)+'</button>'}).join('')+'</div>';
+    h+='<label class="wcust" for="wIn">Or enter grams<input id="wIn" type="number" inputmode="numeric" min="50" step="50" placeholder="e.g. 750" value="'+(opts.indexOf(g)<0?g:'')+'"></label>';
+    h+='<div class="wsum"><span>'+wl(g)+(p.price>0?' \u00B7 <b>'+money(Math.round(p.price*g/1000))+'</b>':' \u00B7 price to confirm')+'</span><button class="btn berry" data-addw="'+p.id+'">Add '+wl(g)+' to cart</button></div>';
+    var lines=Object.keys(cart).filter(function(k){return k.indexOf(p.id+'@')===0&&cart[k]>0});
+    if(lines.length)h+='<div class="win">In your cart: '+lines.map(function(k){return wl(k.split('@')[1])+' \u00D7 '+cart[k]}).join(', ')+'</div>';
+    return h+'</div>'}
+  function card(p){
+    var h='',off=offPct(p);
+    h+='<article class="card"><div class="pic"><button class="open" data-view="'+p.id+'" aria-label="View '+esc(p.name)+'" style="height:100%">'+pic(p)+'</button>';
+    if(off)h+='<span class="off">'+offBadge(p)+'</span>';
+    if(p.best)h+='<span class="best">Bestseller</span>';
+    if(p.sample)h+='<span class="stamp">Sample</span>';
+    if(!p.inStock)h+='<div class="soldout">Out of stock</div>';
+    h+='<button class="share-ic" data-share="'+p.id+'" aria-label="Share '+esc(p.name)+'">'+I.share+'</button>';
+    h+='</div><div class="meta"><button class="open" data-view="'+p.id+'"><div class="name">'+esc(p.name)+'</div><div class="size">'+esc(p.size||'')+'</div></button>';
+    h+='<div class="foot"><span class="price"><b'+(p.price>0?'':' class="ask"')+'>'+pr(p)+'</b>'+(off?'<s>'+money(p.mrp)+'</s>':'')+'</span>'+(manage?'':addCtl(p,false))+'</div>';
+    if(manage)h+='<div class="owner-row"><button data-edit="'+p.id+'">Edit</button>'+(confirmDel===p.id?'<button class="del" data-del="'+p.id+'">Confirm</button>':'<button data-askdel="'+p.id+'">Delete</button>')+'</div>';
+    return h+'</div></article>';
+  }
+
+  /* ---------- page ---------- */
+  function gridHTML(){
+    var list=visible(),h='';
+    if(!manage&&cat!=='All'&&isSoon(cat))return '<div class="soonbox"><b>'+esc(cat)+' \u2013 Coming soon</b><p>Our festive '+esc(cat.toLowerCase())+' are being packed. Check back soon, or ask us on WhatsApp.</p></div>';
+    if(!list.length&&!manage)h='<p class="empty">'+(state.packs.length?(q.trim()?'No gift packs match “'+esc(q.trim())+'”. Try another word.':'No packs in this category yet.'):'No gift packs listed yet.')+'</p>';
+    list.forEach(function(p){h+=card(p)});
+    if(manage)h+='<button class="addcard" id="addPack">+ Add gift pack</button>';
+    return h;
+  }
+  function chipsHTML(){return ['All'].concat(CATS).map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-cat="'+c+'">'+c+'</button>'}).join('')}
+  function catsHTML(){var ci=state.store.catImg||{};return CATS.map(function(c){var n=catCount(c);return '<button class="cat'+(c===cat?' on':'')+'" data-cat="'+c+'" data-jump="1">'+(ci[c]?'<span class="ico ph"><img src="'+esc(ci[c])+'" alt="" loading="lazy"></span>':'<span class="ico" style="background:'+CAT_ICON[c].bg+'">'+CAT_ICON[c].svg+'</span>')+''+c+(isSoon(c)?'<small class="soon">Coming soon</small>':'<small>'+n+' pack'+(n===1?'':'s')+'</small>')+'</button>'}).join('')}
+  function brandRowHTML(){var m={};state.packs.forEach(function(p){if(p.brand&&!isSoon(p.category)&&!p.sample)m[p.brand]=(m[p.brand]||0)+1});var cols=['#C2185B','#E8731A','#8C2366','#178A3A','#256FEF','#B4400F','#7A4CC0'];
+    return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b)}).map(function(b,i){var lg=(state.store.brandLogo||{})[b],cnt='<small>'+m[b]+' pack'+(m[b]===1?'':'s')+'</small>';if(lg)return '<button class="bcard lg" data-brandall="'+esc(b)+'" aria-label="'+esc(b)+'"><img src="'+esc(lg)+'" alt="'+esc(b)+'" loading="lazy">'+cnt+'</button>';return '<button class="bcard" data-brandall="'+esc(b)+'"><i style="background:'+cols[i%cols.length]+'">'+esc(b.charAt(0))+'</i><span>'+esc(b)+'<br>'+cnt+'</span></button>'}).join('')}
+  function isSoon(c){return (state.store.soon||[]).indexOf(c)>=0}
+  function topHTML(){var b=state.packs.filter(function(p){return p.best&&!isSoon(p.category)});return b.map(card).join('')}
+
+  function render(){
+    var s=state.store,h='',hasSample=state.packs.some(function(p){return p.sample}),best=state.packs.some(function(p){return p.best});
+    document.title=s.name||'Gift Pack Shop';
+    h+='<header class="hdr gut"><div class="inner"><div class="logo" aria-hidden="true">'+(s.logo?'<img src="'+esc(s.logo)+'" alt="">':esc((s.name||'G').trim().charAt(0).toUpperCase()))+'</div><div class="shop"><div class="eta"><i></i>'+esc(s.delivery||'Order on WhatsApp')+'</div><h1>'+esc(s.name)+'</h1></div>';
+    h+='<div class="hbtns'+(canEdit?' own':'')+'">'+(canEdit?'<button class="hbtn'+(manage?' on':'')+'" id="toggleManage">'+(manage?'Done':'Manage')+'</button>':'')+'<button class="hbtn" id="a2hs" aria-label="Add to Home Screen">'+I.phone+'<span>Add</span></button><button class="hbtn" id="shareShop" aria-label="Share this shop">'+I.share+'<span>Share</span></button></div>';
+    h+='<label class="search" for="q" aria-label="Search gift packs">'+I.search+'<input id="q" type="search" placeholder="Search “soan papdi”, “perfume”…" value="'+esc(q)+'" autocomplete="off"></label></div><div class="toran" aria-hidden="true">'+toranSVG()+'</div></header>';
+    h+='<main class="gut page"><div class="inner">';
+    if(manage)h+='<div class="notice"><b>Owner mode.</b> Customers don’t see these buttons. Edit packs, tick <b>Top selling</b> on your best packs, then tap <b>Publish changes</b>. <button class="btn" id="editStore" style="padding:6px 10px;margin-left:4px;font-size:12px">Shop details & WhatsApp</button></div>';
+    else if(canEdit&&state.packs.some(function(x){return !(x.price>0)}))h+='<div class="notice">Only you see this: '+state.packs.filter(function(x){return !(x.price>0)}).length+' packs show \u201CAsk price\u201D. Add their prices in <b>Manage</b> \u2192 Edit.</div>';
+    else if(canEdit&&(!waNumber()||hasSample))h+='<div class="notice">Only you see this: '+(!waNumber()?'add your WhatsApp number':'')+(!waNumber()&&hasSample?' and ':'')+(hasSample?'replace the sample packs with your own':'')+' in <b>Manage</b>.</div>';
+    h+='<section class="brand"><div class="bl">'+(s.logo?'<img src="'+esc(s.logo)+'" alt="'+esc(s.name)+' logo">':'<b>'+esc((s.name||'G').trim().charAt(0).toUpperCase())+'</b>')+'</div><div><h2>'+esc(s.name)+'</h2><p class="fg">\u2726 Festive gift packs \u2726</p>'+(s.delivery?'<p><i></i>'+esc(s.delivery)+'</p>':'')+'</div></section>';
+    h+='<section class="banner"><div class="lights"></div><div><small>Festive gifting</small><h2>Diwali Gift Store</h2><p>'+esc(s.tagline||'')+'</p><button class="cta" id="shopNow">Shop gift packs</button></div><canvas id="diya" width="192" height="192" aria-hidden="true"></canvas></section>';
+    h+='<div class="how" aria-label="How to order"><div><b>1</b>Tap ADD on packs</div><div><b>2</b>Open your cart</div><div><b>3</b>Send order on WhatsApp</div></div>';
+    if(best)h+='<section class="top-wrap"><div class="sec-t"><h3>'+I.star+'Top selling</h3><span>Swipe →</span></div><div class="rail" id="rail">'+topHTML()+'</div></section>';
+    h+='<div class="sec-t"><h3>'+I.grid+'Shop by category</h3></div><div class="cats" id="cats">'+catsHTML()+'</div>';
+    h+='<div class="sec-t"><h3>'+I.star+'Shop by brand</h3></div><div class="brandrow" id="brandrow">'+brandRowHTML()+'</div>';
+    h+='<div class="sec-t" id="allTop"><h3 id="secTitle">'+I.gift+'<span>'+titleText()+'</span></h3><button class="link" id="count">'+countText()+'</button></div>';
+    h+='<div id="filters">'+filtersHTML()+'</div>';
+    h+='<section class="grid" id="grid">'+gridHTML()+'</section><div class="flourish">'+flourishSVG(false)+'<span>Wishing you a bright, sweet Diwali</span>'+flourishSVG(true)+'</div></div></main>';
+    app.innerHTML=h;
+    drawDiya(document.getElementById('diya'));
+    renderBar();renderSheet();
+  }
+  function titleText(){return q.trim()?'Results for “'+esc(q.trim())+'”':(cat==='All'?'All gift packs':cat)}
+  function countText(){var n=visible().length;return (cat!=='All'||q.trim())?'Show all':n+' items'}
+  function refreshGrid(){
+    var g=document.getElementById('grid');if(!g){render();return}
+    g.innerHTML=gridHTML();
+    var r=document.getElementById('rail');if(r)r.innerHTML=topHTML();
+    var c=document.getElementById('count');if(c)c.textContent=countText();
+    var t=document.querySelector('#secTitle span');if(t)t.innerHTML=titleText();
+    var ch=document.getElementById('chips');if(ch)ch.innerHTML=chipsHTML();
+    var fl=document.getElementById('filters');if(fl)fl.innerHTML=filtersHTML();
+    var ct=document.getElementById('cats');if(ct)ct.innerHTML=catsHTML();
+  }
+  function jumpToGrid(){var el=document.getElementById('allTop');if(!el)return;var y=el.getBoundingClientRect().top+window.scrollY-(document.querySelector('.hdr').offsetHeight+50);window.scrollTo({top:y,behavior:'smooth'})}
+
+  function renderBar(bump){
+    var old=document.getElementById('bar');if(old)old.remove();
+    var b=document.createElement('div');b.id='bar';b.className='bar';
+    if(manage){
+      if(!dirty)return;
+      b.innerHTML='<button class="bar-in owner" id="publish"><span class="l"><span><small>You have unpublished changes</small><b>Publish changes</b></span></span><span class="go">›</span></button>';
+    }else{
+      var c=cartCount();if(!c)return;
+      b.innerHTML='<button class="bar-in'+(bump?' bump':'')+'" id="openCart"><span class="l"><span class="ic">'+I.cart+'</span><span><small>'+c+' item'+(c>1?'s':'')+'</small><b>'+money(cartTotal())+'</b></span></span><span class="go">View Cart ›</span></button>';
+    }
+    document.body.appendChild(b);
+  }
+
+  function field(id,label,val,type,extra){return '<label for="'+id+'">'+label+'<input id="'+id+'" type="'+(type||'text')+'" value="'+esc(val)+'" '+(extra||'')+'></label>'}
+  function head(t){return '<div class="sh-head"><h2>'+t+'</h2><button class="x" data-close aria-label="Close">×</button></div>'}
+
+  function renderSheet(){
+    var old=document.getElementById('scrim');if(old)old.remove();
+    if(!sheet)return;
+    var h='',p;
+    if(sheet==='view'&&(p=pack(curId))){
+      var off=offPct(p);
+      var ph=photos(p);
+      h+=head(esc(p.category||'Gift pack'))+'<div class="blk"><div class="dpic">'+(ph.length>1?'<div class="gal" id="gal">'+ph.map(function(u,i){return '<img src="'+esc(u)+'" alt="'+esc(p.name)+' photo '+(i+1)+'" data-zoom="'+i+'">'}).join('')+'</div><button class="gnav l" data-gal="-1" aria-label="Previous photo">\u2039</button><button class="gnav r" data-gal="1" aria-label="Next photo">\u203A</button><div class="dots" id="dots">'+ph.map(function(_,i){return '<i'+(i?'':' class="on"')+'></i>'}).join('')+'</div>':(ph.length?'<img src="'+esc(ph[0])+'" alt="'+esc(p.name)+'" data-zoom="0">':pic(p)))+(ph.length?'<button class="zbtn" data-zoomopen="1" aria-label="View photo full screen">'+I.zoom+'</button>':'')+(off?'<span class="off">'+offBadge(p)+'</span>':'')+(p.best?'<span class="best">Bestseller</span>':'')+'</div>';
+      h+='<div class="dname">'+esc(p.name)+'</div><div class="dsize">'+esc(p.size||'')+'</div>';
+      h+='<div class="dprice"><b>'+pr(p)+'</b>'+(p.price>0?'':'<em style="background:#FFF1E3;color:var(--offer)">Add to cart and we\u2019ll confirm the price on WhatsApp</em>')+''+(off?'<s>MRP '+money(p.mrp)+'</s><em>Save '+money(p.mrp-p.price)+'</em>':'')+'</div>';
+      if(p.desc)h+='<p class="ddesc">'+esc(p.desc)+'</p>';
+      if(p.byWeight&&p.inStock)h+=weightBox(p);
+      h+='<div class="drow">'+(p.byWeight?'':addCtl(p,true))+'<button class="btn" data-share="'+p.id+'">'+I.share+'Share</button></div></div>';
+      if(cartCount())h+='<div class="cta-row"><button class="btn berry split" id="openCart2"><span>'+cartCount()+' item'+(cartCount()>1?'s':'')+' · '+money(cartTotal())+'</span><span>View cart ›</span></button></div>';
+    }else if(sheet==='home'){
+      var ios=/iPhone|iPad|iPod/i.test(navigator.userAgent),url=shopUrl();
+      h+=head('Add to Home Screen')+'<div class="blk"><p style="margin:0 0 10px">Get <b>'+esc(state.store.name)+'</b> on your home screen like an app. It takes 10 seconds.</p>';
+      var andr='<div class="hs"><h4>Android (Chrome)</h4><ol><li>Tap <b>Open in browser</b> below, or copy the link and open it in Chrome</li><li>Tap the <b>\u22EE</b> menu at the top right</li><li>Tap <b>Add to Home screen</b>, then <b>Add</b></li></ol></div>';
+      var iph='<div class="hs"><h4>iPhone (Safari)</h4><ol><li>Open the link in <b>Safari</b></li><li>Tap the <b>Share</b> button <span class="shr">\u2B06\uFE0E</span> at the bottom</li><li>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b></li></ol></div>';
+      h+=(ios?iph+andr:andr+iph)+'</div><div class="cta-row"><a class="btn berry" href="'+esc(url)+'" target="_blank" rel="noopener" style="text-decoration:none">Open in browser</a><button class="btn" id="copyLink">'+I.copy+'Copy shop link</button><div id="linkOut"></div></div>';
+    }else if(sheet==='share'){
+      p=curId?pack(curId):null;
+      var url=p?packUrl(p):shopUrl();
+      h+=head(p?'Share this gift pack':'Share this shop')+'<div class="blk">';
+      if(p)h+='<div class="sharecard"><div class="th">'+pic(p)+'</div><div><b>'+esc(p.name)+'</b><div class="dsize">'+esc(p.size||'')+' · '+pr(p)+'</div></div></div>';
+      else h+='<p style="margin:0">Send <b>'+esc(state.store.name)+'</b> to friends and family so they can order gift packs too.</p>';
+      h+='</div><div class="cta-row"><button class="btn wa" id="shareWa">'+I.wa+'Share on WhatsApp</button><button class="btn" id="copyLink">'+I.copy+'Copy link</button><div id="linkOut"></div>';
+      if(!url)h+='<p class="hint">The shop link isn’t set yet.</p>';
+      h+='</div>';
+    }else if(sheet==='cart'){
+      var lines=cartLines(),tot=cartTotal(),mrp=cartMrp(),sv=mrp-tot;
+      h+=head('My Cart');
+      if(!lines.length){h+='<p class="empty">Your cart is empty.</p>'}
+      else{
+        if(sv>0)h+='<div class="savebanner">You are saving '+money(sv)+' on this order</div>';
+        h+='<div class="blk">';
+        lines.forEach(function(l){h+='<div class="ci"><div class="th">'+pic(l.p)+'</div><div class="n">'+esc(l.p.name)+'<small>'+esc(l.p.size||'')+'</small></div><div class="r">'+addCtl(l.p,false)+'<b>'+lineAmt(l)+'</b></div></div>'});
+        h+='</div><div class="blk"><h4>Bill details</h4><div class="bill"><div><span>Items total (MRP)</span><span>'+money(mrp)+'</span></div>'+(sv>0?'<div class="save"><span>Discount</span><span>−'+money(sv)+'</span></div>':'')+(unpriced()?'<div><span>Price to confirm on WhatsApp</span><span>'+unpriced()+' item'+(unpriced()>1?'s':'')+'</span></div>':'')+'<div class="gt"><span>'+(unpriced()?'Total so far':'Grand total')+'</span><span>'+money(tot)+'</span></div></div></div>';
+        h+='<div class="blk"><h4>Delivery details</h4><div class="fields"><div class="two">'+field('cName','Your name','')+field('cPhone','Phone','','tel')+'</div><label for="cAddr">Delivery address<textarea id="cAddr"></textarea></label><label for="cNote">Note (optional)<input id="cNote" type="text" placeholder="Delivery date, gift message…"></label></div></div>';
+        h+='<div class="cta-row">';
+        if(waNumber())h+='<button class="btn wa split" id="sendWa"><span style="text-align:left">'+money(tot)+'<small style="display:block;font-size:11px;font-weight:600;opacity:.85">TOTAL</small></span><span style="display:inline-flex;align-items:center;gap:6px">'+I.wa+'Order on WhatsApp</span></button><p class="hint">Opens WhatsApp with your order filled in. Tap send there to place it.</p><button class="btn" id="copyMsg">'+I.copy+'Copy order message</button>';
+        else h+='<p class="err" style="text-align:center">This shop hasn’t added its WhatsApp number yet, so orders can’t be sent.</p>';
+        h+='<div id="msgOut"></div></div>';
+      }
+    }else if(sheet==='store'){
+      var s=state.store;
+      h+=head('Shop details')+'<div class="blk"><div class="fields">';
+      h+=field('sName','Shop name',s.name)+field('sDel','Delivery line in the header',s.delivery||'','text','placeholder="e.g. Same-day delivery in town"');
+      h+='<label for="sTag">Banner text<textarea id="sTag">'+esc(s.tagline)+'</textarea></label>';
+      h+=field('sWa','WhatsApp number (with country code)',s.whatsapp,'tel','placeholder="e.g. 91 98765 43210"');
+      h+='<label>Shop logo</label><div class="photo-row" style="justify-content:flex-start;align-items:center"><div class="logo" id="logoPrev" style="box-shadow:0 0 0 1px var(--line)">'+(s.logo?'<img src="'+esc(s.logo)+'" alt="">':'')+'</div><span class="btn filebtn">'+(s.logo?'Change logo':'Add logo')+'<input id="sLogo" type="file" accept="image/*" aria-label="Shop logo"></span>'+(s.logo?'<button class="btn" id="rmLogo">Remove</button>':'')+'</div>';
+      h+='<p class="hint" style="text-align:left">A 10-digit Indian number is fine; +91 is added automatically. Orders arrive at this number.</p></div></div><div class="cta-row"><button class="btn berry" id="saveStore">Save</button></div>';
+    }else if(sheet==='edit'){
+      p=curId?pack(curId):{name:'',size:'',price:'',mrp:'',category:cat!=='All'?cat:'Sweets',desc:'',inStock:true,best:false};
+      h+=head(curId?'Edit gift pack':'New gift pack')+'<div class="blk">';
+      h+='<div class="slots">'+slotHTML(p,'image','Photo 1 (main)')+slotHTML(p,'image2','Photo 2 (optional)')+'</div><p class="hint" style="margin:8px 0 12px">Photo 1 shows on the product card. Customers swipe to see photo 2.</p>';
+      h+='<div class="fields">'+field('pName','Pack name',p.name,'text','placeholder="e.g. Haldiram Soan Papdi Gift Pack"');
+      h+=field('pBrand','Brand',p.brand||'','text','list="brandlist" placeholder="e.g. Haldiram\u2019s"')+'<datalist id="brandlist">'+Object.keys(state.packs.reduce(function(m,x){if(x.brand)m[x.brand]=1;return m},{})).sort().map(function(b){return '<option value="'+esc(b)+'">'}).join('')+'</datalist>';
+      h+='<div class="two">'+field('pSize','Size / weight',p.size||'','text','placeholder="500 g"')+'<label for="pCat">Category<select id="pCat">'+CATS.map(function(c){return '<option'+(p.category===c?' selected':'')+'>'+c+'</option>'}).join('')+'</select></label></div>';
+      h+='<div class="two">'+field('pPrice','Selling price (₹, empty = Ask price)',p.price>0?p.price:'','number','min="0" inputmode="numeric"')+field('pMrp','MRP (₹, optional)',p.mrp||'','number','min="0" inputmode="numeric"')+'</div>';
+      h+='<label for="pDesc">Description (optional)<textarea id="pDesc" placeholder="What’s inside, flavours, shelf life…">'+esc(p.desc||'')+'</textarea></label>';
+      h+='<label class="check" for="pBW"><input id="pBW" type="checkbox" '+((curId?p.byWeight:p.category==='Dry Fruits')?'checked':'')+'> Sold by weight (price is per kg)</label>';
+      h+='<label class="check" for="pBest"><input id="pBest" type="checkbox" '+(p.best?'checked':'')+'> Show in Top selling</label>';
+      h+='<label class="check" for="pStock"><input id="pStock" type="checkbox" '+(p.inStock?'checked':'')+'> In stock</label></div><p class="err" id="pErr"></p></div>';
+      h+='<div class="cta-row"><button class="btn berry" id="savePack">Save pack</button></div>';
+    }else{sheet=null;return}
+    var sc=document.createElement('div');sc.id='scrim';sc.className='scrim';
+    sc.innerHTML='<div class="sheet" role="dialog" aria-modal="true">'+h+'</div>';
+    sc.addEventListener('click',function(e){if(e.target===sc)closeSheet()});
+    document.body.appendChild(sc);
+  }
+  function slotHTML(p,key,label){var pv=pend[key];var u=pv!==undefined?(pv?pv.t:null):p[key];var id=key==='image'?'1':'2';
+    return '<div class="slot"><span class="lbl">'+label+'</span><div class="thumb" id="thumb'+id+'">'+(u?'<img src="'+esc(u)+'" alt="">':(key==='image'?art(p):''))+'</div><div class="acts"><span class="btn filebtn">'+(u?'Change':'Add photo')+'<input id="pImg'+id+'" type="file" accept="image/*" aria-label="'+(u?'Change ':'Add ')+label+'"></span>'+(u?'<button class="btn" data-rmimg="'+key+'">Remove</button>':'')+'</div></div>'}
+  function openSheet(name,id){if(!sheet)pushLayer('sheet');sheet=name;curId=id||null;pendingImage=undefined;pend={};pendingLogo=undefined;renderSheet()}
+  function closeSheet0(){closeZoom();sheet=null;curId=null;pendingImage=undefined;renderSheet()}
+  function closeSheet(){closeSheet0();dropLayers(['zoom','sheet'])}
+
+  function orderMessage(){
+    var g=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
+    var lines=cartLines(),m='Hello '+state.store.name+'! I would like to order:\n\n';
+    lines.forEach(function(l,i){m+=(i+1)+'. '+l.p.name+(l.p.size?' ('+l.p.size+')':'')+' × '+l.q+' = '+(l.p.price>0?money(l.q*l.p.price):'price to confirm')+'\n'});
+    var sv=cartMrp()-cartTotal();
+    m+='\n'+(unpriced()?'Total so far: ':'Total: ')+money(cartTotal())+(sv>0?' (you save '+money(sv)+')':'')+'\n';if(unpriced())m+='Please confirm the price for '+unpriced()+' item'+(unpriced()>1?'s':'')+'.\n';
+    if(g('cName'))m+='\nName: '+g('cName');
+    if(g('cPhone'))m+='\nPhone: '+g('cPhone');
+    if(g('cAddr'))m+='\nAddress: '+g('cAddr');
+    if(g('cNote'))m+='\nNote: '+g('cNote');
+    return m;
+  }
+  function shareMessage(){
+    var p=curId?pack(curId):null;
+    if(p){var off=offPct(p);return 'Look at this gift pack from '+state.store.name+':\n'+p.name+(p.size?' ('+p.size+')':'')+' – '+pr(p)+(off?' ('+(off<=15?'save '+money(p.mrp-p.price):off+'% off')+')':'')+'\n\nOrder here: '+packUrl(p)}
+    return state.store.name+' – Diwali gift packs: namkeens, sweets, chocolates, cookies, dry fruits, hampers, perfumes and juices. Order on WhatsApp:\n'+shopUrl();
+  }
+
+  function encodeCanvas(c,q){var u='';try{u=c.toDataURL('image/webp',q)}catch(e){}if(u.indexOf('data:image/webp')!==0)u=c.toDataURL('image/jpeg',q);return u}
+  function makeBoth(file,cb){
+    var r=new FileReader();
+    r.onload=function(){var img=new Image();img.onload=function(){
+      var w=img.width,h=img.height;
+      var k=Math.min(1,1000/Math.max(w,h));var f=document.createElement('canvas');f.width=Math.round(w*k);f.height=Math.round(h*k);
+      var g=f.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,f.width,f.height);g.drawImage(img,0,0,f.width,f.height);
+      var S=380,t=document.createElement('canvas');t.width=S;t.height=S;var tg=t.getContext('2d');tg.fillStyle='#fff';tg.fillRect(0,0,S,S);
+      var ks=Math.min(S/w,S/h);var tw=w*ks,th=h*ks;tg.drawImage(img,(S-tw)/2,(S-th)/2,tw,th);
+      cb({t:encodeCanvas(t,.75),f:encodeCanvas(f,.68)});
+    };img.onerror=function(){cb(null)};img.src=r.result};
+    r.onerror=function(){cb(null)};r.readAsDataURL(file);
+  }
+  function resizeImage(file,cb,png){
+    var r=new FileReader();
+    r.onload=function(){var img=new Image();img.onload=function(){
+      var max=png?240:560,w=img.width,h=img.height,k=Math.min(1,max/Math.max(w,h));
+      var c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);
+      var g=c.getContext('2d');if(!png){g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height)}g.drawImage(img,0,0,c.width,c.height);cb(png?c.toDataURL('image/png'):c.toDataURL('image/jpeg',0.8));
+    };img.onerror=function(){cb(null)};img.src=r.result};
+    r.onerror=function(){cb(null)};r.readAsDataURL(file);
+  }
+
+  function buildDoc(){
+    var resetEl=document.head.querySelector('style');
+    var reset=resetEl?resetEl.textContent:':root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}';
+    var fonts='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap">';
+    var data=JSON.stringify(state).replace(/</g,'\\u003c');
+    var S='scr'+'ipt';
+    return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+reset+'</style></head><body>'+
+      '<title>'+esc(state.store.name||'Gift Pack Shop')+'</title>\n\n'+fonts+'\n'+
+      '<style id="app-style">'+document.getElementById('app-style').textContent+'</style>\n'+
+      '<div id="app"><p class="empty">Loading…</p></div>\n'+
+      '<'+S+' type="application/json" id="store-data">'+data+'</'+S+'>\n'+
+      '<'+S+' id="app-script">'+document.getElementById('app-script').textContent+'</'+S+'>'+
+      '</body></html>';
+  }
+
+  function keepInputs(fn){
+    var ids=['cName','cPhone','cAddr','cNote'],v={};
+    ids.forEach(function(i){var el=document.getElementById(i);if(el)v[i]=el.value});
+    var sc=document.querySelector('.sheet'),st=sc?sc.scrollTop:0;
+    fn();
+    ids.forEach(function(i){var el=document.getElementById(i);if(el&&v[i]!=null)el.value=v[i]});
+    sc=document.querySelector('.sheet');if(sc)sc.scrollTop=st;
+  }
+  var zoomIdx=0,zoomBig=false;
+  function openZoom(i){var p=pack(curId);if(!p)return;var ph=photos(p);if(!ph.length)return;if(layers.indexOf('zoom')<0)pushLayer('zoom');zoomIdx=Math.max(0,Math.min(i,ph.length-1));zoomBig=false;renderZoom()}
+  function closeZoom(){var z=document.getElementById('zoomer');if(z)z.remove()}
+  function renderZoom(){closeZoom();var p=pack(curId);if(!p)return;var ph=photos(p);
+    var z=document.createElement('div');z.id='zoomer';z.className='zoomer'+(zoomBig?' big':'');z.setAttribute('role','dialog');z.setAttribute('aria-label','Photo viewer');
+    z.innerHTML='<div class="zscroll" id="zscroll"><img src="'+esc(ph[zoomIdx])+'" alt="'+esc(p.name)+'" id="zimg"></div>'+
+      '<div class="ztop"><span>'+(ph.length>1?(zoomIdx+1)+' / '+ph.length:'')+'</span><span class="zr"><button class="zb" id="zToggle">'+(zoomBig?'Fit':'Zoom in')+'</button><button class="zb" id="zClose" aria-label="Close">\u00D7</button></span></div>'+
+      (ph.length>1?'<button class="gnav l" id="zPrev" aria-label="Previous photo">\u2039</button><button class="gnav r" id="zNext" aria-label="Next photo">\u203A</button>':'')+
+      '<p class="zhint">'+(zoomBig?'Drag to move around':'Tap the photo or Zoom in to see details')+'</p>';
+    document.body.appendChild(z);
+    var sc=document.getElementById('zscroll');if(zoomBig&&sc){sc.scrollLeft=(sc.scrollWidth-sc.clientWidth)/2;sc.scrollTop=(sc.scrollHeight-sc.clientHeight)/2}
+    z.addEventListener('click',function(e){var id=e.target.closest('button')&&e.target.closest('button').id;
+      if(id==='zClose'){closeZoom();dropLayers(['zoom']);return}
+      if(id==='zToggle'||e.target.id==='zimg'){zoomBig=!zoomBig;renderZoom();return}
+      if(id==='zPrev'||id==='zNext'){zoomIdx=(zoomIdx+(id==='zNext'?1:-1)+ph.length)%ph.length;zoomBig=false;renderZoom()}
+    });
+  }
+  function keepEdit(fn){
+    var ids=['pName','pBrand','pSize','pCat','pPrice','pMrp','pDesc'],v={},c={};
+    ids.forEach(function(i){var el=document.getElementById(i);if(el)v[i]=el.value});
+    ['pBest','pStock','pBW'].forEach(function(i){var el=document.getElementById(i);if(el)c[i]=el.checked});
+    fn();
+    ids.forEach(function(i){var el=document.getElementById(i);if(el&&v[i]!=null)el.value=v[i]});
+    Object.keys(c).forEach(function(i){var el=document.getElementById(i);if(el)el.checked=c[i]});
+  }
+  document.addEventListener('scroll',function(e){var g=e.target;if(!g||g.id!=='gal')return;var i=Math.round(g.scrollLeft/Math.max(1,g.clientWidth));var ds=document.querySelectorAll('#dots i');for(var k=0;k<ds.length;k++)ds[k].className=k===i?'on':''},true);
+  function refreshCart(bump){
+    if(sheet)keepInputs(function(){refreshGrid();renderBar(bump);renderSheet()});
+    else{refreshGrid();renderBar(bump)}
+  }
+
+  document.addEventListener('change',function(e){if(e.target.id==='wIn'&&curId){var v=Math.round(Number(e.target.value)/10)*10;if(v>=50&&v<=20000){selG[curId]=v;keepInputs(renderSheet)}}});
+  document.addEventListener('input',function(e){if(e.target.id==='q'){q=e.target.value;if(brand!=='All'&&!brandsHere().some(function(b){return b[0]===brand}))brand='All';refreshGrid()}});
+  document.addEventListener('change',function(e){if(e.target.id==='sortSel'){sortBy=e.target.value;refreshGrid()}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(document.getElementById('zoomer')){closeZoom();dropLayers(['zoom']);return}if(sheet)closeSheet()}if(e.key==='Enter'&&e.target.id==='q'){e.target.blur();jumpToGrid()}});
+
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('button,[data-close],[data-zoom]');if(!t)return;
+    var d=t.dataset;
+    if(d.wg){selG[curId]=Number(d.wg);keepInputs(renderSheet);return}
+    if(d.addw){var pw=pack(d.addw),gw=selG[d.addw]||250;var kw=d.addw+'@'+gw;cart[kw]=(cart[kw]||0)+1;saveCart();refreshCart(true);toast(wl(gw)+' '+pw.name+' added to cart');return}
+    if(d.brand){brand=d.brand;refreshGrid();return}
+    if(d.brandall){if(cat==='All'&&layers.indexOf('cat')<0)pushLayer('cat');cat='All';q='';var qb=document.getElementById('q');if(qb)qb.value='';brand=d.brandall;refreshGrid();jumpToGrid();return}
+    if(d.cat){if(d.cat!=='All'&&cat==='All')pushLayer('cat');if(d.cat==='All')dropLayers(['cat']);cat=d.cat;brand='All';q='';var qi=document.getElementById('q');if(qi)qi.value='';refreshGrid();if(d.jump)jumpToGrid();return}
+    if(d.inc){cart[d.inc]=(cart[d.inc]||0)+1;saveCart();refreshCart(true);return}
+    if(d.dec){cart[d.dec]=Math.max(0,(cart[d.dec]||0)-1);if(!cart[d.dec])delete cart[d.dec];saveCart();refreshCart(false);return}
+    if(d.close!==undefined){closeSheet();return}
+    if(d.view){openSheet('view',d.view);return}
+    if(d.share){openSheet('share',d.share);return}
+    if(d.edit){openSheet('edit',d.edit);return}
+    if(d.rmimg){pend[d.rmimg]=null;keepEdit(renderSheet);return}
+    if(d.zoomopen!==undefined||d.zoom!==undefined){var gl0=document.getElementById('gal');openZoom(d.zoom!==undefined?Number(d.zoom):(gl0?Math.round(gl0.scrollLeft/Math.max(1,gl0.clientWidth)):0));return}
+    if(d.gal){var gl=document.getElementById('gal');if(gl)gl.scrollBy({left:gl.clientWidth*Number(d.gal),behavior:'smooth'});return}
+    if(d.askdel){confirmDel=d.askdel;refreshGrid();return}
+    if(d.del){state.packs=state.packs.filter(function(p){return p.id!==d.del});confirmDel=null;dirty=true;refreshGrid();renderBar();return}
+    switch(t.id){
+      case 'toggleManage':manage=!manage;confirmDel=null;render();break;
+      case 'a2hs':if(window.__a2hs){var ev=window.__a2hs;window.__a2hs=null;ev.prompt();ev.userChoice.then(function(r){if(r&&r.outcome==='accepted')toast('Added to your home screen')}).catch(function(){})}else openSheet('home',null);break;
+      case 'shareShop':openSheet('share',null);break;
+      case 'shopNow':jumpToGrid();break;
+      case 'clearF':brand='All';sortBy='rec';refreshGrid();break;
+      case 'count':dropLayers(['cat']);cat='All';brand='All';q='';var qi2=document.getElementById('q');if(qi2)qi2.value='';refreshGrid();break;
+      case 'openCart':case 'openCart2':openSheet('cart');break;
+      case 'editStore':openSheet('store');break;
+      case 'addPack':openSheet('edit',null);break;
+      case 'shareWa':openLink('https://wa.me/?text='+encodeURIComponent(shareMessage()));break;
+      case 'copyLink':{var p0=curId?pack(curId):null;copyText(p0?packUrl(p0):shopUrl(),'Link copied. Paste it anywhere to share.','linkOut');break}
+      case 'saveStore':
+        if(pendingLogo&&pendingLogo.indexOf('data:')===0&&assetsApi){var lb=t;lb.disabled=true;lb.textContent='Saving\u2026';toBlobUrl(pendingLogo).then(function(u){pendingLogo=u;lb.disabled=false;lb.click()},function(){lb.disabled=false;lb.textContent='Save';toast('The logo couldn\u2019t be saved. Try again.')});break}
+        state.store.name=document.getElementById('sName').value.trim()||'Gift Pack Shop';
+        state.store.delivery=document.getElementById('sDel').value.trim();
+        state.store.tagline=document.getElementById('sTag').value.trim();
+        state.store.whatsapp=document.getElementById('sWa').value.trim();
+        if(pendingLogo!==undefined){if(pendingLogo)state.store.logo=pendingLogo;else delete state.store.logo}pendingLogo=undefined;
+        dirty=true;sheet=null;render();toast('Saved. Publish to make it live.');break;
+      case 'rmLogo':pendingLogo=null;document.getElementById('logoPrev').innerHTML='';t.remove();break;
+      case 'rmImg':pendingImage=null;document.getElementById('thumb').innerHTML='';t.remove();break;
+      case 'savePack':{
+        var name=document.getElementById('pName').value.trim(),price=Number(document.getElementById('pPrice').value),mrp=Number(document.getElementById('pMrp').value)||0;
+        if(!name){document.getElementById('pErr').textContent='Add a pack name.';break}
+        if(document.getElementById('pPrice').value!==''&&!(price>0)){document.getElementById('pErr').textContent='Enter a price above 0, or leave it empty to show \u201CAsk price\u201D.';break}
+        var data={name:name,brand:(document.getElementById('pBrand')||{value:''}).value.trim(),size:document.getElementById('pSize').value.trim(),category:document.getElementById('pCat').value,desc:document.getElementById('pDesc').value.trim(),
+          price:price>0?Math.round(price*100)/100:0,mrp:price>0&&mrp>price?Math.round(mrp*100)/100:0,best:document.getElementById('pBest').checked,byWeight:!!(document.getElementById('pBW')||{}).checked,inStock:document.getElementById('pStock').checked,sample:false};
+        var sb=t;sb.disabled=true;sb.textContent='Saving photos\u2026';
+        storePend().then(function(){
+        var tgt;if(curId){tgt=pack(curId);Object.assign(tgt,data)}else{data.id='p'+Date.now().toString(36);data.hue=Math.floor(Math.random()*360);state.packs.push(data);tgt=data}
+        ['image','image2'].forEach(function(k){var fk=k==='image'?'full':'full2';if(pend[k]!==undefined){if(pend[k]){tgt[k]=pend[k].t;tgt[fk]=pend[k].f}else{delete tgt[k];delete tgt[fk]}}});
+        if(!tgt.image&&tgt.image2){tgt.image=tgt.image2;delete tgt.image2;if(tgt.full2){tgt.full=tgt.full2;delete tgt.full2}}pend={};
+        dirty=true;closeSheet();render();toast('Pack saved. Publish to make it live.');
+        },function(){sb.disabled=false;sb.textContent='Save pack';var pe=document.getElementById('pErr');if(pe)pe.textContent='The photo couldn\u2019t be saved. Check your internet and tap Save again.'});break}
+      case 'publish':
+        if(!artifactApi){toast('Publishing isn’t available in this view.');break}
+        t.disabled=true;t.querySelector('b').textContent='Publishing…';
+        artifactApi.publish(buildDoc()).catch(function(er){
+          var c=er&&er.code;
+          if(c==='conflict')return;
+          if(c==='not_writer'||c==='not_granted'){canEdit=false;manage=false;render();toast('This view is read-only.');return}
+          t.disabled=false;t.querySelector('b').textContent='Publish changes';toast(c==='rate_limited'?'Too many saves. Wait a moment and try again.':'Couldn’t publish. Try again.');
+        });break;
+      case 'sendWa':
+        openLink('https://wa.me/'+waNumber()+'?text='+encodeURIComponent(orderMessage()));
+        showMsg('If WhatsApp didn’t open, copy this message and send it to +'+waNumber()+':');break;
+      case 'copyMsg':{
+        var m=orderMessage();
+        try{navigator.clipboard.writeText(m).then(function(){toast('Order copied. Paste it in WhatsApp.')},function(){showMsg('Select and copy this message:')})}catch(er){showMsg('Select and copy this message:')}
+        break}
+    }
+  });
+  function showMsg(label){var o=document.getElementById('msgOut');if(o)o.innerHTML='<p class="hint" style="text-align:left;margin-top:6px">'+esc(label)+'</p><div class="msgbox">'+esc(orderMessage())+'</div>'}
+
+  document.addEventListener('change',function(e){
+    if(e.target.id==='sLogo'&&e.target.files[0]){resizeImage(e.target.files[0],function(url){if(!url){toast('That logo couldn’t be opened. Try a JPG or PNG.');return}if(url){pendingLogo=url;var lp=document.getElementById('logoPrev');if(lp)lp.innerHTML='<img src="'+url+'" alt="">'}},true);return}
+    if((e.target.id==='pImg1'||e.target.id==='pImg2')&&e.target.files[0]){
+      var key=e.target.id==='pImg1'?'image':'image2';
+      makeBoth(e.target.files[0],function(o){
+        if(!o){var pe=document.getElementById('pErr');if(pe)pe.textContent='That photo couldn’t be opened. Try a JPG or PNG photo, or take a screenshot of it and upload that.';return}
+        pend[key]=o;keepEdit(renderSheet);
+      });
+    }
+  });
+
+  /* back button: one step at a time inside the store */
+  var layers=[],skipPop=0;
+  function pushLayer(k){try{history.pushState({gs:k,n:layers.length+1},'');layers.push(k)}catch(e){}}
+  function dropLayers(kinds){var n=0;for(var i=layers.length-1;i>=0;i--){if(kinds.indexOf(layers[i])>=0){layers.splice(i,1);n++}}if(n){skipPop+=n;try{history.go(-n)}catch(e){skipPop-=n}}}
+  window.addEventListener('popstate',function(){
+    if(skipPop>0){skipPop--;return}
+    var k=layers.pop();
+    if(k==='zoom'){closeZoom()}
+    else if(k==='sheet'){if(document.getElementById('zoomer'))closeZoom();closeSheet0()}
+    else if(k==='cat'){cat='All';brand='All';q='';var qi=document.getElementById('q');if(qi)qi.value='';refreshGrid();var ct=document.getElementById('cats');if(ct)ct.scrollIntoView({block:'center'})}
+  });
+  startPetals();
+  render();
+  try{var hid=(location.hash||'').slice(1);if(hid&&pack(hid))openSheet('view',hid)}catch(e){}
+  if(window.claude&&window.claude.use){
+    window.claude.use('user').then(function(u){return u?u.canEdit():false}).then(function(ok){
+      if(!ok)return;canEdit=true;
+      window.claude.use('assets').then(function(x){assetsApi=x}).catch(function(){});
+      return window.claude.use('artifact').then(function(a){artifactApi=a;keepInputs(render)});
+    }).catch(function(){});
+  }
+})();
+</script>
+</body></html>
