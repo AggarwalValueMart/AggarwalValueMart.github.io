@@ -76,9 +76,11 @@ head = f'''<!doctype html>
 <meta property="og:image" content="{SITE}icon-512.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512">
 <link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
+<script data-goatcounter="https://aggarwalvaluemart.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Aggarwal Mart">
 <style>:root{{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 <script>window.addEventListener('beforeinstallprompt',function(e){{e.preventDefault();window.__a2hs=e}});
+document.addEventListener('click',function(e){{var g=window.goatcounter,t=e.target.closest&&e.target.closest('#sendWa,#shareWa');if(!t||!g||!g.count)return;g.count(t.id==='sendWa'?{{path:'whatsapp-order',title:'Order sent on WhatsApp',event:true}}:{{path:'shared-on-whatsapp',title:'Store shared on WhatsApp',event:true}})}},true);
 if('serviceWorker' in navigator)window.addEventListener('load',function(){{navigator.serviceWorker.register('sw.js').catch(function(){{}})}});</script>
 '''
 open(os.path.join(out, 'index.html'), 'w').write(head + '</head><body>\n' + body + '\n</body></html>\n')
