@@ -3,7 +3,8 @@
 usage: python3 tools/build.py LIVE_HTML [REPO_DIR]
 Each /_blob/<id> photo is served from images/<id>.webp when that file is in the repo.
 Photos not in the repo are left out (the product shows its other photo or a
-"Photo coming soon" tile) and listed in tools/missing-photos.txt.
+"Photo coming soon" tile) and listed in tools/missing-photos.txt;
+their asset ids go to tools/need.json, which the sync hands to the store page so it can send them.
 """
 import json, os, re, shutil, sys
 
@@ -19,6 +20,7 @@ M = re.search(rx, body, re.S)
 d = json.loads(M.group(2))
 os.makedirs(os.path.join(out, 'images'), exist_ok=True)
 have = set()
+need = set()
 
 def local(url):
     """Return the website path for a /_blob/ url, or None if that photo is not in the repo."""
@@ -28,6 +30,7 @@ def local(url):
     if os.path.exists(os.path.join(out, 'images', i + '.webp')):
         have.add(i)
         return 'images/' + i + '.webp'
+    need.add(i)
     return None
 
 missing = []
@@ -81,5 +84,6 @@ if('serviceWorker' in navigator)window.addEventListener('load',function(){{navig
 open(os.path.join(out, 'index.html'), 'w').write(head + '</head><body>\n' + body + '\n</body></html>\n')
 
 open(os.path.join(out, '.nojekyll'), 'w').write('')
+json.dump({'ids': sorted(need)}, open(os.path.join(out, 'tools', 'need.json'), 'w'))
 open(os.path.join(out, 'tools', 'missing-photos.txt'), 'w').write('\n'.join('%s %s' % m for m in missing) + '\n')
 print(len(d['packs']), 'packs,', len(have), 'photos; missing:', missing)

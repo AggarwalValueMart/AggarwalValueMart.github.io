@@ -36,6 +36,9 @@ ch14 image2
 ch15 image2
 ch16 image2
 ch17 image2
+nk5 image2
+sw44 image2
+sw45 image2
 df1 image
 df2 image
 df4 image
