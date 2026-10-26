@@ -1,8 +1,10 @@
 sw27 image2
+sw34 image2
 sw35 image2
 sw36 image2
 sw37 image2
 ck9 image2
+ck10 image2
 ck11 image2
 ck13 image2
 ck14 image2
@@ -14,6 +16,7 @@ ch4 image2
 ch5 image2
 ch6 image2
 ch7 image2
+ch8 image2
 ch9 image2
 ch10 image2
 ch11 image2
@@ -27,6 +30,7 @@ sw39 image2
 sw40 image2
 sw41 image2
 sw42 image2
+sw43 image2
 ch13 image2
 ch14 image2
 ch15 image2
@@ -34,7 +38,6 @@ ch16 image2
 ch17 image2
 df1 image
 df2 image
-df3 image
 df4 image
 df5 image
 df6 image
