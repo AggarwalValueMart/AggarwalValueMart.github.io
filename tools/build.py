@@ -42,6 +42,12 @@ for key in ('catImg', 'brandLogo'):
         nv = local(v)
         if nv: s[key][k] = nv
         else: del s[key][k]; missing.append((key, k))
+# website-only clean logo tiles (tools/logos.json)
+_lj = os.path.join(out, 'tools', 'logos.json')
+if os.path.exists(_lj):
+    for _b, _f in json.load(open(_lj)).items():
+        if os.path.exists(os.path.join(out, _f)):
+            s.setdefault('brandLogo', {})[_b] = _f
 for p in d['packs']:
     for a, b in (('image', 'full'), ('image2', 'full2')):
         x, y = local(p.get(a)), local(p.get(b))
