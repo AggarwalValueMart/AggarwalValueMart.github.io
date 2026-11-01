@@ -77,7 +77,7 @@ head = f'''<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{name}</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#08343F">
+<meta name="theme-color" content="#4E0B17">
 <meta property="og:type" content="website"><meta property="og:url" content="{SITE}">
 <meta property="og:title" content="{name}"><meta property="og:description" content="{desc}">
 <meta property="og:image" content="{SITE}icon-512.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512">
