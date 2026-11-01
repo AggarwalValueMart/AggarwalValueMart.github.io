@@ -79,7 +79,14 @@ THEMES = {
 }
 THEME_NAMES = {'maroon': 'Royal maroon & gold', 'rani': 'Rani pink & marigold', 'night': 'Diwali night (indigo & gold)'}
 THEME = 'maroon'
+EXTRA = '\n/* ---- brands v2 + polish ---- */\n.hero .tag{display:none}\n.brandrow{display:grid;grid-auto-flow:column;grid-template-rows:repeat(2,auto);grid-auto-columns:128px;gap:10px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x proximity}\n.bcard.lg{width:auto;flex-direction:column;align-items:stretch;gap:3px;padding:6px 6px 9px;border-radius:16px;border:1px solid var(--line);background:#fff;box-shadow:0 4px 14px rgba(78,11,23,.08);scroll-snap-align:start;text-align:center}\n.bcard.lg .blogo{display:block;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1.5px var(--gold-2);aspect-ratio:16/9;background:#fff}\n.bcard.lg .blogo img{width:100%;height:100%;object-fit:cover;border-radius:0;display:block}\n.bcard.lg .bl-letter{display:grid;place-items:center;background:var(--soft)}\n.bcard.lg .bl-letter i{width:40px;height:40px;font-size:18px}\n.bcard.lg .bname{font-weight:800;font-size:12.5px;color:var(--ink);line-height:1.25;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n.bcard.lg small{font-size:11px;color:var(--berry);font-weight:700}\n@media (prefers-reduced-motion:no-preference){.bcard.lg{transition:transform .18s,box-shadow .18s}.bcard.lg:active{transform:scale(.97)}}\n.top-wrap .sec-t{margin-top:14px}\n#secTitle,#secTitle span{font-family:var(--disp);font-weight:400;font-size:24px;color:var(--berry-deep)}\n'
 LAYOUT = '\n/* ---- layout v4 ---- */\n.cats{gap:14px 10px}\n.cat .ico,.cat .ico.ph{border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--gold),0 8px 18px rgba(78,11,23,.18)}\n.cat.on .ico{box-shadow:0 0 0 3px var(--berry),0 8px 18px rgba(78,11,23,.25)}\n.cat{font-size:12.5px}\n.sec-t{margin:28px 0 14px}\n.sec-t h3{gap:10px}\n.sec-t h3::after{width:64px;height:2px;bottom:-1px;background:linear-gradient(90deg,var(--gold),rgba(217,166,62,0))}\n.sec-t h3::before{content:"";position:absolute;left:66px;bottom:-4px;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}\n.card{padding:8px 8px 10px;border-radius:18px}\n.card .meta{gap:2px}\n.foot{flex-direction:column;align-items:stretch;gap:8px;padding-top:6px}\n.price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}\n.price b{font-size:17px}\n.foot .add,.foot .add[data-view]{width:100%;min-width:0;margin-left:0;padding:9px 10px;border-radius:12px;font-size:13.5px;letter-spacing:.06em}\n.foot .step{width:100%;height:38px}\n.foot .step button{width:44px;height:38px}\n.rail .card{width:172px}\n.top-wrap{border-radius:20px;padding:4px 12px 10px}\n.how{margin-top:14px}\n.hero .tag{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}\n'
+
+BRAND_IMG_OLD = "<img src=\"'+esc(lg)+'\" alt=\"'+esc(b)+'\" loading=\"lazy\">'+cnt+'</button>'"
+BRAND_IMG_NEW = "<span class=\"blogo\"><img src=\"'+esc(lg)+'\" alt=\"\" loading=\"lazy\"></span><span class=\"bname\">'+esc(b)+'</span>'+cnt+'</button>'"
+BRAND_TXT_OLD = "'<button class=\"bcard\" data-brandall=\"'+esc(b)+'\"><i style=\"background:'+cols[i%cols.length]+'\">'+esc(b.charAt(0))+'</i><span>'+esc(b)+'<br>'+cnt+'</span></button>'"
+BRAND_TXT_NEW = "'<button class=\"bcard lg\" data-brandall=\"'+esc(b)+'\"><span class=\"blogo bl-letter\"><i style=\"background:'+cols[i%cols.length]+'\">'+esc(b.charAt(0))+'</i></span><span class=\"bname\">'+esc(b)+'</span>'+cnt+'</button>'"
+STEPS_OLD = "h+='<div class=\"how\" aria-label=\"How to order\"><div><b>1</b>Tap ADD on packs</div><div><b>2</b>Open your cart</div><div><b>3</b>Send order on WhatsApp</div></div>';"
 
 
 def apply(body, theme=None):
@@ -111,10 +118,13 @@ def apply(body, theme=None):
     rep(DIYA_OLD, DIYA_NEW, 'diya')
     rep(CLICK_OLD, CLICK_NEW, 'chat button')
     rep(FOOT_OLD, FOOT_NEW, 'footer')
+    rep(BRAND_IMG_OLD, BRAND_IMG_NEW, 'brand logo card')
+    rep(BRAND_TXT_OLD, BRAND_TXT_NEW, 'brand letter card')
+    rep(STEPS_OLD, '', 'steps')
     i = body.find(CSS_ANCHOR)
     j = body.find('</style>', i)
     if i >= 0 and j > i:
-        body = body[:j] + CSS + THEMES[theme or THEME] + LAYOUT + body[j:]
+        body = body[:j] + CSS + THEMES[theme or THEME] + LAYOUT + EXTRA + body[j:]
     else:
         skipped.append('css')
     return body, skipped
