@@ -60,6 +60,13 @@ a = "case 'a2hs':openSheet('home',null);break;"
 assert body.count(a) == 1
 body = body.replace(a, "case 'a2hs':if(window.__a2hs){var ev=window.__a2hs;window.__a2hs=null;ev.prompt();ev.userChoice.then(function(r){if(r&&r.outcome==='accepted')toast('Added to your home screen')}).catch(function(){})}else openSheet('home',null);break;")
 
+# website-only design layer (tools/theme.py)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import theme
+body, skipped = theme.apply(body)
+if skipped:
+    print('design changes skipped:', skipped)
+
 t = re.search(r'<title>.*?</title>', body).group(0)
 body = body.replace(t, '', 1)
 body = body.replace('<meta name="claude:viewport-fit-sides" content="cover">', '')
